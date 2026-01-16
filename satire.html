@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Satire | MoeMedia</title>
+  <meta name="description" content="Satire & commentary — clearly labeled humor, culture, and criticism." />
+  <link rel="stylesheet" href="/assets/css/media.css" />
+  <link rel="icon" href="/assets/img/moemedia-logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="brand" href="/index.html"><div class="brand__mark"></div><div class="brand__text"><div class="brand__title">MOE MEDIA</div><div class="brand__sub">moemedia.moecommunitycloud.com</div></div></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/news.html">News</a>
+          <a href="/ai-tech.html">AI &amp; Tech</a>
+          <a href="/sports.html">Sports</a>
+          <a href="/satire.html">Satire</a>
+          <a href="/shorts.html">Shorts</a>
+          <a href="/live.html">Live</a>
+          <a href="/members.html">Members</a>
+          <a href="/shop.html">Shop</a>
+        </nav>
+        <div class="header__actions">
+          <button class="iconbtn" id="btnSearch">🔍</button>
+          <button class="iconbtn" id="btnNotify">🔔</button>
+          <a class="btn btn--red" href="/join.html">🔴 Join</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="pagehead"><h1>Satire &amp; Commentary</h1><p>Humor + critique — labeled clearly. If it’s here, it’s commentary, not a claim of fact.</p></section>
+
+      <div class="notice"><strong>Satire Label:</strong> Keeping this section distinct protects your enterprise brand and keeps content organized.</div>
+
+      <section class="layout">
+        <div>
+          <div class="sectionbar"><h2>Latest Satire</h2>
+            <div class="filters">
+              <button class="pill" aria-pressed="true" data-filter="all">All</button>
+              <button class="pill" aria-pressed="false" data-filter="satire">Satire</button>
+              <button class="pill" aria-pressed="false" data-filter="culture">Culture</button>
+            </div>
+          </div>
+
+          <div class="grid" id="videoGrid">
+            <article class="card" data-cat="satire">
+              <a href="/video.html?v=dQw4w9WgXcQ&t=Satire+Rich+Party&c=SATIRE" data-open-modal data-video="dQw4w9WgXcQ" data-title="Satire: Rich Party"><div class="thumb"><span class="duration">6:01</span></div></a>
+              <div class="card__body">
+                <div class="tagrow"><span class="tag tag--red">SATIRE</span><button class="save" title="Save">⭐</button></div>
+                <h3 class="title">Satire: The Rich Party Problem</h3>
+                <div class="meta"><span>MOE-AI 24</span><span>•</span><span>Jan 12</span><span>•</span><span>31K views</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-cat="culture">
+              <a href="/video.html?v=dQw4w9WgXcQ&t=Commentary+Culture&c=COMMENTARY" data-open-modal data-video="dQw4w9WgXcQ" data-title="Commentary: Culture"><div class="thumb"><span class="duration">8:22</span></div></a>
+              <div class="card__body">
+                <div class="tagrow"><span class="tag tag--red">COMMENTARY</span><button class="save" title="Save">⭐</button></div>
+                <h3 class="title">Commentary: When The Vibes Replace The Facts</h3>
+                <div class="meta"><span>MOE-AI 24</span><span>•</span><span>Jan 10</span><span>•</span><span>18K views</span></div>
+              </div>
+            </article>
+
+            <div class="adblock" style="grid-column: 1 / -1;"><strong>AdSense Slot Placeholder</strong><br/>Responsive unit here.</div>
+          </div>
+        </div>
+
+        <aside class="rail">
+          <div class="railbox">
+            <h3>Rules of the Room</h3>
+            <div style="font-size:14px; opacity:.9; line-height:1.5;">
+              <p style="margin:0 0 10px;">Satire is clearly labeled. Commentary is opinion-based. For factual claims, link sources in descriptions.</p>
+              <a class="btn" href="/ethics.html">Read Ethics</a>
+            </div>
+          </div>
+
+          <div class="railbox">
+            <h3>Join MoeMedia</h3>
+            <form class="joinform" onsubmit="return false;">
+              <div class="label">Email</div>
+              <input class="input" type="email" placeholder="you@domain.com" required />
+              <button class="btn btn--red" type="submit">🔴 Join + Get Drops</button>
+              <div style="font-size:12px; opacity:.78;">Weekly digest + member drops.</div>
+            </form>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footergrid">
+        <div><p class="foothead">MoeMedia</p><p class="footmeta">Satire &amp; commentary — labeled, organized, and first-party.</p></div>
+        <div class="footlinks"><a href="/about.html">About</a><a href="/advertise.html">Advertise</a><a href="/ethics.html">Ethics</a><a href="/privacy.html">Privacy</a></div>
+        <div class="footlinks"><a href="https://moecommunitycloud.com/">↪ Back to MoeCommunityCloud.com</a><a href="/join.html">Join</a><a href="/shop.html">Shop</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="videoModal" aria-hidden="true" role="dialog" aria-label="Video player">
+    <div class="modal__panel">
+      <div class="modal__top"><p class="modal__title" id="modalTitle">Now Playing</p><button class="closebtn" id="closeModal">✕</button></div>
+      <div class="modal__media"><iframe id="modalFrame" title="Video player" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    </div>
+  </div>
+
+  <script src="/assets/js/media.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live | MoeMedia</title>
+  <meta name="description" content="Live streams and replays — MoeMedia." />
+  <link rel="stylesheet" href="/assets/css/media.css" />
+  <link rel="icon" href="/assets/img/moemedia-logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="brand" href="/index.html"><div class="brand__mark"></div><div class="brand__text"><div class="brand__title">MOE MEDIA</div><div class="brand__sub">moemedia.moecommunitycloud.com</div></div></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/news.html">News</a>
+          <a href="/ai-tech.html">AI &amp; Tech</a>
+          <a href="/sports.html">Sports</a>
+          <a href="/satire.html">Satire</a>
+          <a href="/shorts.html">Shorts</a>
+          <a href="/live.html">Live</a>
+          <a href="/members.html">Members</a>
+          <a href="/shop.html">Shop</a>
+        </nav>
+        <div class="header__actions">
+          <button class="iconbtn" id="btnSearch">🔍</button>
+          <button class="iconbtn" id="btnNotify">🔔</button>
+          <a class="btn btn--red" href="/join.html">🔴 Join</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="pagehead"><h1>Live</h1><p>Streams, countdowns, and replay archives — first-party home base.</p></section>
+
+      <section class="layout">
+        <div>
+          <div class="notice"><strong>Next Live:</strong> Add a countdown timer in Phase 2. For now, set your live stream video ID in the button below.</div>
+
+          <div class="card" style="overflow:hidden;">
+            <div class="thumb" style="aspect-ratio:16/9;"></div>
+            <div class="card__body">
+              <div class="tagrow"><span class="tag">LIVE</span><button class="save" title="Save">⭐</button></div>
+              <h3 class="title" style="min-height:auto;">Live Stream Placeholder</h3>
+              <div class="meta"><span>MoeMedia Live</span><span>•</span><span>Schedule</span></div>
+              <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+                <button class="btn" data-open-modal data-video="dQw4w9WgXcQ" data-title="Live Stream">▶ Watch</button>
+                <a class="btn btn--red" href="/join.html">🔴 Join</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="adblock"><strong>AdSense Slot Placeholder</strong><br/>Responsive unit between live and replays.</div>
+
+          <div class="sectionbar" style="margin-top:22px;"><h2>Recent Replays</h2></div>
+
+          <div class="grid" id="videoGrid">
+            <article class="card" data-cat="live">
+              <a href="/video.html?v=dQw4w9WgXcQ&t=Replay+1&c=REPLAY" data-open-modal data-video="dQw4w9WgXcQ" data-title="Replay 1"><div class="thumb"><span class="duration">1:04:11</span></div></a>
+              <div class="card__body">
+                <div class="tagrow"><span class="tag">REPLAY</span><button class="save" title="Save">⭐</button></div>
+                <h3 class="title">Replay: Full Breakdown Session</h3>
+                <div class="meta"><span>MoeMedia Live</span><span>•</span><span>Jan 10</span><span>•</span><span>3.2K views</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="rail">
+          <div class="railbox">
+            <h3>Get Notified</h3>
+            <form class="joinform" onsubmit="return false;">
+              <div class="label">Email</div>
+              <input class="input" type="email" placeholder="you@domain.com" required />
+              <button class="btn btn--red" type="submit">🔔 Live Alerts</button>
+              <div style="font-size:12px; opacity:.78;">We only ping when you go live.</div>
+            </form>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footergrid">
+        <div><p class="foothead">MoeMedia</p><p class="footmeta">Live streams + first-party retention.</p></div>
+        <div class="footlinks"><a href="/about.html">About</a><a href="/advertise.html">Advertise</a><a href="/ethics.html">Ethics</a><a href="/privacy.html">Privacy</a></div>
+        <div class="footlinks"><a href="https://moecommunitycloud.com/">↪ Back to MoeCommunityCloud.com</a><a href="/join.html">Join</a><a href="/shop.html">Shop</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="videoModal" aria-hidden="true" role="dialog" aria-label="Video player">
+    <div class="modal__panel">
+      <div class="modal__top"><p class="modal__title" id="modalTitle">Now Playing</p><button class="closebtn" id="closeModal">✕</button></div>
+      <div class="modal__media"><iframe id="modalFrame" title="Video player" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    </div>
+  </div>
+
+  <script src="/assets/js/media.js"></script>
+</body>
+</html>

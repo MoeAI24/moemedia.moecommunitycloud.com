@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Video | MoeMedia</title>
+  <meta name="description" content="Video detail page with context, CTAs, and AdSense-safe layout." />
+  <link rel="stylesheet" href="/assets/css/media.css" />
+  <link rel="icon" href="/assets/img/moemedia-logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="brand" href="/index.html"><div class="brand__mark"></div><div class="brand__text"><div class="brand__title">MOE MEDIA</div><div class="brand__sub">moemedia.moecommunitycloud.com</div></div></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/news.html">News</a>
+          <a href="/ai-tech.html">AI &amp; Tech</a>
+          <a href="/sports.html">Sports</a>
+          <a href="/satire.html">Satire</a>
+          <a href="/shorts.html">Shorts</a>
+          <a href="/live.html">Live</a>
+          <a href="/members.html">Members</a>
+          <a href="/shop.html">Shop</a>
+        </nav>
+        <div class="header__actions">
+          <button class="iconbtn" id="btnSearch">🔍</button>
+          <button class="iconbtn" id="btnNotify">🔔</button>
+          <a class="btn btn--red" href="/join.html">🔴 Join</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="pagehead">
+        <h1 id="vTitle">Video Title (Dynamic)</h1>
+        <p id="vMeta">MoeMedia • Date • Category • Views</p>
+      </section>
+
+      <section class="layout">
+        <div>
+          <div class="card" style="overflow:hidden;">
+            <div class="modal__media" style="aspect-ratio:16/9;">
+              <iframe id="pageFrame" title="Video player" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+            <div class="card__body">
+              <div class="tagrow">
+                <span class="tag" id="vTag">CATEGORY</span>
+                <button class="save" id="btnSaveHero" title="Save">⭐</button>
+              </div>
+
+              <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:10px;">
+                <a class="btn" id="watchYT" href="#" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+                <a class="btn" href="/shop.html">🛒 Shop</a>
+                <a class="btn btn--red" href="/join.html">🔴 Join</a>
+              </div>
+
+              <div class="adblock" style="margin-top:22px;"><strong>AdSense Slot Placeholder</strong><br/>Responsive unit after the player/CTA block.</div>
+
+              <h2 style="margin:0 0 10px; font-size:22px; font-weight:900;">Context / Commentary</h2>
+              <p style="margin:0; opacity:.92; max-width: 85ch;">
+                This is where your “Explain This” text lives. Keep it short, sharp, and useful — a few paragraphs explaining the timeline,
+                key claims, and what viewers should pay attention to.
+              </p>
+
+              <div class="notice" style="margin-top:16px;"><strong>Tip:</strong> Add 3 bullet “Key Takeaways” under this for SEO + retention.</div>
+            </div>
+          </div>
+
+          <div class="sectionbar" style="margin-top:22px;"><h2>More Like This</h2></div>
+          <div class="grid" id="videoGrid">
+            <article class="card" data-cat="related">
+              <a href="/video.html?v=dQw4w9WgXcQ&t=Related+Video&c=NEWS"><div class="thumb"><span class="duration">12:44</span></div></a>
+              <div class="card__body">
+                <div class="tagrow"><span class="tag">NEWS</span><button class="save" title="Save">⭐</button></div>
+                <h3 class="title">Related Video: Follow-up Breakdown</h3>
+                <div class="meta"><span>MBCC</span><span>•</span><span>Jan 11</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="rail">
+          <div class="railbox">
+            <h3>Join the Hub</h3>
+            <form class="joinform" onsubmit="return false;">
+              <div class="label">Email</div>
+              <input class="input" type="email" placeholder="you@domain.com" required />
+              <button class="btn btn--red" type="submit">📩 Weekly Drops</button>
+              <div style="font-size:12px; opacity:.78;">Be first. No spam.</div>
+            </form>
+          </div>
+
+          <div class="railbox">
+            <h3>MBCC Offers</h3>
+            <div class="rail-list">
+              <a class="rail-item" href="https://moecommunitycloud.com/consulting.html"><div class="rail-thumb"></div><p class="rail-title">Consulting: Cloud + AI Delivery</p></a>
+              <a class="rail-item" href="https://moecommunitycloud.com/partners.html"><div class="rail-thumb"></div><p class="rail-title">Partners: Work with MBCC</p></a>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footergrid">
+        <div><p class="foothead">MoeMedia</p><p class="footmeta">Video page built for retention + conversion.</p></div>
+        <div class="footlinks"><a href="/about.html">About</a><a href="/advertise.html">Advertise</a><a href="/ethics.html">Ethics</a><a href="/privacy.html">Privacy</a></div>
+        <div class="footlinks"><a href="https://moecommunitycloud.com/">↪ Back to MoeCommunityCloud.com</a><a href="/join.html">Join</a><a href="/shop.html">Shop</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/media.js"></script>
+  <script>
+    (function(){
+      const params = new URLSearchParams(location.search);
+      const v = params.get('v') || 'dQw4w9WgXcQ';
+      const titleRaw = params.get('t') || 'Video Title';
+      const cat = params.get('c') || 'NEWS';
+
+      const title = decodeURIComponent(titleRaw.replace(/\+/g,' '));
+      document.getElementById('vTitle').textContent = title;
+      document.getElementById('vTag').textContent = cat;
+      document.getElementById('vMeta').textContent = `MoeMedia • ${cat} • ${new Date().toLocaleDateString()}`;
+
+      const frame = document.getElementById('pageFrame');
+      frame.src = `https://www.youtube.com/embed/${encodeURIComponent(v)}?rel=0&modestbranding=1`;
+
+      const watchYT = document.getElementById('watchYT');
+      watchYT.href = `https://www.youtube.com/watch?v=${encodeURIComponent(v)}`;
+    })();
+  </script>
+</body>
+</html>

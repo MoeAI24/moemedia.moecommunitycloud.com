@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shorts | MoeMedia</title>
+  <meta name="description" content="Shorts feed — vertical clips with fast CTAs." />
+  <link rel="stylesheet" href="/assets/css/media.css" />
+  <link rel="icon" href="/assets/img/moemedia-logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="brand" href="/index.html"><div class="brand__mark"></div><div class="brand__text"><div class="brand__title">MOE MEDIA</div><div class="brand__sub">moemedia.moecommunitycloud.com</div></div></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/news.html">News</a>
+          <a href="/ai-tech.html">AI &amp; Tech</a>
+          <a href="/sports.html">Sports</a>
+          <a href="/satire.html">Satire</a>
+          <a href="/shorts.html">Shorts</a>
+          <a href="/live.html">Live</a>
+          <a href="/members.html">Members</a>
+          <a href="/shop.html">Shop</a>
+        </nav>
+        <div class="header__actions">
+          <button class="iconbtn" id="btnSearch">🔍</button>
+          <button class="iconbtn" id="btnNotify">🔔</button>
+          <a class="btn btn--red" href="/join.html">🔴 Join</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="pagehead"><h1>Shorts</h1><p>Vertical drops with fast CTAs — built to convert first-party traffic, not rent it.</p></section>
+
+      <section class="shortswrap">
+        <article class="shortcard">
+          <a href="/video.html?v=dQw4w9WgXcQ&t=Short+1&c=SHORTS" data-open-modal data-video="dQw4w9WgXcQ" data-title="Short 1">
+            <div class="shortcard__media"></div>
+          </a>
+          <div class="shortcard__actions">
+            <button class="btn" id="btnSaveHero">⭐ Save</button>
+            <a class="btn" href="/shop.html">🛒 Shop</a>
+            <a class="btn btn--red" href="/join.html">🔴 Join</a>
+          </div>
+        </article>
+
+        <div class="adblock"><strong>AdSense Slot Placeholder</strong><br/>Responsive unit between short cards (not inside).</div>
+
+        <article class="shortcard">
+          <a href="/video.html?v=dQw4w9WgXcQ&t=Short+2&c=SHORTS" data-open-modal data-video="dQw4w9WgXcQ" data-title="Short 2">
+            <div class="shortcard__media"></div>
+          </a>
+          <div class="shortcard__actions">
+            <button class="btn" id="btnSaveHero">⭐ Save</button>
+            <a class="btn" href="/shop.html">🛒 Shop</a>
+            <a class="btn btn--red" href="/join.html">🔴 Join</a>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footergrid">
+        <div><p class="foothead">MoeMedia</p><p class="footmeta">Short-form that routes people back to your owned platform.</p></div>
+        <div class="footlinks"><a href="/about.html">About</a><a href="/advertise.html">Advertise</a><a href="/ethics.html">Ethics</a><a href="/privacy.html">Privacy</a></div>
+        <div class="footlinks"><a href="https://moecommunitycloud.com/">↪ Back to MoeCommunityCloud.com</a><a href="/join.html">Join</a><a href="/shop.html">Shop</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="videoModal" aria-hidden="true" role="dialog" aria-label="Video player">
+    <div class="modal__panel">
+      <div class="modal__top"><p class="modal__title" id="modalTitle">Now Playing</p><button class="closebtn" id="closeModal">✕</button></div>
+      <div class="modal__media"><iframe id="modalFrame" title="Video player" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    </div>
+  </div>
+
+  <script src="/assets/js/media.js"></script>
+</body>
+</html>
