@@ -38,9 +38,39 @@ Quick deploy checklist:
 2) Enable HTTPS
 3) Upload files to subdomain root
 4) Verify:
-   - https://moemedia.moecommunitycloud.com/
-   - https://moemedia.moecommunitycloud.com/sitemap.xml
-   - https://moemedia.moecommunitycloud.com/robots.txt
+
+Video SEO (VideoObject + Key Moments):
+- video.html emits VideoObject JSON-LD when you provide a real upload date.
+- Recommended link pattern (best results):
+
+  /video.html?v=YOUTUBE_ID&t=TITLE&d=DESC&c=NEWS&u=YYYY-MM-DD&dur=PT12M44S
+
+  Params:
+    v   = YouTube video id (required)
+    t   = Title (recommended)
+    d   = Description (recommended)
+    c   = Category tag (optional)
+    u   = Upload date in YYYY-MM-DD (IMPORTANT: schema is only emitted if this is provided)
+    dur = Duration (ISO 8601, e.g., PT12M44S) (optional)
+
+Key Moments:
+- Automatic key moments: supported via SeekToAction URL template.
+- Manual clips (optional): add up to 8 chapter clips with:
+
+    km1=Label~start~end
+    km2=Label~start~end
+
+  Example:
+    /video.html?v=YOUTUBE_ID&t=...&u=2026-01-15&km1=Intro~0~45&km2=Receipts~45~120
+
+- Deep link to a timestamp:
+    /video.html?v=YOUTUBE_ID&ts=90
+
+Verify (after deploy):
+  - https://moemedia.moecommunitycloud.com/
+  - https://moemedia.moecommunitycloud.com/sitemap.xml
+  - https://moemedia.moecommunitycloud.com/robots.txt
+
 5) (Optional) Submit sitemap in Google Search Console
 
 Phase 2 add-ons:

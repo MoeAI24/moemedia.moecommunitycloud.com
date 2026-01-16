@@ -7,6 +7,9 @@
   <meta name="description" content="Video detail page with context, CTAs, and AdSense-safe layout." />
   <link rel="stylesheet" href="/assets/css/media.css" />
   <link rel="icon" href="/assets/img/moemedia-logo.svg" type="image/svg+xml" />
+
+  <!-- VideoObject schema (filled by JS below) -->
+  <script id="videoSchema" type="application/ld+json">{}</script>
 </head>
 <body>
   <header class="header">
@@ -36,7 +39,7 @@
     <div class="container hero-strip__inner">
       <div class="hero-strip__left">
         <span class="hero-strip__kicker">MOE MEDIA</span>
-        <span class="hero-strip__tagline">Conscious creates reality.</span>
+        <span class="hero-strip__tagline">Owned audience. Real commentary. Built on MoeCommunityCloud.</span>
       </div>
       <div class="hero-strip__right">
         <a class="btn btn--red" href="/join.html">🔴 Join</a>
@@ -134,22 +137,132 @@
 
   <script src="/assets/js/media.js"></script>
   <script>
+    // Video detail loader + structured data (VideoObject + Key Moments)
+    //
+    // Supported query params:
+    //   v=VIDEO_ID (required)
+    //   t=Title (recommended)
+    //   d=Description (recommended)
+    //   c=Category tag (optional)
+    //   u=Upload date in YYYY-MM-DD (IMPORTANT for schema accuracy)
+    //   dur=ISO 8601 duration (e.g., PT12M44S)
+    //   ts=Start time in seconds (used for deep links / key moments)
+    //   km1..km8=Label~start~end  (optional Clip markup, e.g., km1=Intro~0~45)
     (function(){
       const params = new URLSearchParams(location.search);
+
       const v = params.get('v') || 'dQw4w9WgXcQ';
-      const titleRaw = params.get('t') || 'Video Title';
-      const cat = params.get('c') || 'NEWS';
+      const titleRaw = params.get('t') || 'MoeMedia Video';
+      const descRaw  = params.get('d') || 'Watch the full breakdown on MoeMedia.';
+      const cat      = params.get('c') || 'NEWS';
+
+      // Only publish uploadDate if you pass it (don’t guess).
+      const uploadDate = params.get('u'); // YYYY-MM-DD
+      const duration   = params.get('dur'); // ISO 8601, e.g., PT12M44S
+
+      // Timestamp support for deep links and SeekToAction
+      const ts = (() => {
+        const raw = params.get('ts');
+        if (!raw) return null;
+        const n = Number(raw);
+        return Number.isFinite(n) && n >= 0 ? Math.floor(n) : null;
+      })();
 
       const title = decodeURIComponent(titleRaw.replace(/\+/g,' '));
-      document.getElementById('vTitle').textContent = title;
-      document.getElementById('vTag').textContent = cat;
-      document.getElementById('vMeta').textContent = `MoeMedia • ${cat} • ${new Date().toLocaleDateString()}`;
+      const desc  = decodeURIComponent(descRaw.replace(/\+/g,' '));
+
+      const vTitle = document.getElementById('vTitle');
+      const vTag   = document.getElementById('vTag');
+      const vMeta  = document.getElementById('vMeta');
+      if (vTitle) vTitle.textContent = title;
+      if (vTag) vTag.textContent = cat;
+      if (vMeta) vMeta.textContent = `MoeMedia • ${cat} • ${new Date().toLocaleDateString()}`;
+
+      const embedBase = `https://www.youtube.com/embed/${encodeURIComponent(v)}?rel=0&modestbranding=1`;
+      const embedUrl  = ts !== null ? `${embedBase}&start=${ts}` : embedBase;
+      const watchUrl  = `https://www.youtube.com/watch?v=${encodeURIComponent(v)}`;
 
       const frame = document.getElementById('pageFrame');
-      frame.src = `https://www.youtube.com/embed/${encodeURIComponent(v)}?rel=0&modestbranding=1`;
+      if (frame) frame.src = embedUrl;
 
       const watchYT = document.getElementById('watchYT');
-      watchYT.href = `https://www.youtube.com/watch?v=${encodeURIComponent(v)}`;
+      if (watchYT) watchYT.href = watchUrl;
+
+      // Build the page URL WITHOUT ts for schema template usage
+      const cleanUrl = new URL(location.href);
+      cleanUrl.searchParams.delete('ts');
+      const pageUrl = cleanUrl.toString();
+
+      // YouTube thumbnails
+      const thumbMax = `https://i.ytimg.com/vi/${encodeURIComponent(v)}/maxresdefault.jpg`;
+      const thumbHq  = `https://i.ytimg.com/vi/${encodeURIComponent(v)}/hqdefault.jpg`;
+
+      // Optional Clip markup (km1..km8=Label~start~end)
+      const clips = [];
+      for (let i = 1; i <= 8; i++) {
+        const key = `km${i}`;
+        const val = params.get(key);
+        if (!val) continue;
+        const parts = val.split('~');
+        if (parts.length < 3) continue;
+        const label = decodeURIComponent(parts[0].replace(/\+/g,' ')).trim();
+        const start = Number(parts[1]);
+        const end   = Number(parts[2]);
+        if (!label || !Number.isFinite(start) || start < 0 || !Number.isFinite(end) || end <= start) continue;
+        const clipUrl = new URL(pageUrl);
+        clipUrl.searchParams.set('ts', String(Math.floor(start)));
+        clips.push({
+          "@type": "Clip",
+          "name": label,
+          "startOffset": Math.floor(start),
+          "endOffset": Math.floor(end),
+          "url": clipUrl.toString()
+        });
+      }
+
+      // VideoObject schema
+      // Google guidance: required properties for rich results include name, thumbnailUrl, uploadDate.
+      // We'll only emit markup when uploadDate is provided (don’t guess). 
+      const schemaEl = document.getElementById('videoSchema');
+      if (schemaEl && uploadDate) {
+        const seekUrl = new URL(pageUrl);
+        // URL template for Key Moments auto-detection (SeekToAction)
+        // Google can use this pattern to generate timestamp links.
+        const seekTemplate = seekUrl.toString() + (seekUrl.toString().includes('?') ? '&' : '?') + 'ts={seek_to_second_number}';
+
+        const schema = {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          "name": title,
+          "description": desc,
+          "thumbnailUrl": [thumbMax, thumbHq],
+          "uploadDate": uploadDate,
+          "embedUrl": embedBase,
+          "url": pageUrl,
+          "publisher": {
+            "@type": "Organization",
+            "name": "MoeMedia",
+            "url": "https://moecommunitycloud.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": location.origin + "/assets/img/moemedia-logo.svg"
+            }
+          },
+          "isFamilyFriendly": true,
+          "potentialAction": {
+            "@type": "SeekToAction",
+            "target": seekTemplate,
+            "startOffset-input": "required name=seek_to_second_number"
+          }
+        };
+
+        if (duration) schema.duration = duration;
+        if (clips.length) schema.hasPart = clips;
+
+        schemaEl.textContent = JSON.stringify(schema);
+      } else if (schemaEl) {
+        schemaEl.textContent = "{}";
+      }
     })();
   </script>
 </body>
