@@ -604,3 +604,57 @@ footer{
   padding: 12px 14px;
   border-radius: var(--r16);
 }
+
+
+/* Breadcrumbs (SEO + UX) */
+.breadcrumbs{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  opacity: .92;
+}
+.breadcrumbs a{
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(247,243,233,.12);
+  background: rgba(247,243,233,.03);
+}
+.breadcrumbs a:hover{
+  border-color: rgba(212,175,55,.35);
+  background: rgba(212,175,55,.06);
+  color: var(--mbcc-gold);
+}
+
+/* Editorial intro blocks */
+.editorial-intro, .category-intro, .video-context{
+  border: 1px solid rgba(247,243,233,.10);
+  background: rgba(247,243,233,.03);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.35);
+  padding: 16px;
+  margin: 16px 0;
+}
+.editorial-intro h2, .video-context h2{
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 900;
+}
+.editorial-intro p, .video-context p{
+  margin: 0 0 10px;
+  opacity: .92;
+}
+.editorial-intro p:last-child, .video-context p:last-child{
+  margin-bottom: 0;
+}
+.disclaimer{
+  border: 1px solid rgba(212,175,55,.25);
+  background: rgba(212,175,55,.06);
+  padding: 14px;
+  border-radius: 16px;
+  margin: 12px 0 0;
+  font-size: 14px;
+  opacity: .95;
+}

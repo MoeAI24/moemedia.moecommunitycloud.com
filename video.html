@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Video | MoeMedia</title>
-  <meta name="description" content="Video detail page with context, CTAs, and AdSense-safe layout." />
+  <title>MoeMedia Video | Watch & Context</title>
+  <meta name="description" id="metaDesc" content="Watch MoeMedia videos with added context, summaries, and related links." />
   <link rel="stylesheet" href="/assets/css/media.css" />
   <link rel="icon" href="/assets/img/moemedia-logo.svg" type="image/svg+xml" />
 
   <!-- VideoObject schema (filled by JS below) -->
   <script id="videoSchema" type="application/ld+json">{}</script>
+
+<script id="orgSchema" type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MoeMedia", "url": "https://moemedia.moecommunitycloud.com/", "parentOrganization": {"@type": "Organization", "name": "MoeCommunityCloud", "url": "https://moecommunitycloud.com/"}, "sameAs": [], "description": "Independent media and commentary from MoeCommunityCloud — news, AI & tech, sports, and culture."}</script>
+
+<script id="siteSchema" type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "MoeMedia", "url": "https://moemedia.moecommunitycloud.com/", "publisher": {"@type": "Organization", "name": "MoeMedia", "url": "https://moemedia.moecommunitycloud.com/"}}</script>
 </head>
 <body>
   <header class="header">
@@ -56,6 +60,14 @@
         <h1 id="vTitle">Video Title (Dynamic)</h1>
         <p id="vMeta">MoeMedia • Date • Category • Views</p>
       </section>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <a id="bcCat" href="/news.html">Category</a>
+        <span aria-hidden="true">›</span>
+        <span id="bcTitle">Video</span>
+      </nav>
+
 
       <section class="layout">
         <div>
@@ -178,6 +190,24 @@
       })();
 
       const title = decodeURIComponent(titleRaw.replace(/\+/g,' '));
+
+      // Update document title and meta description for SEO
+      document.title = `${title} | MoeMedia`;
+      const metaDescEl = document.getElementById('metaDesc');
+      if (metaDescEl) metaDescEl.setAttribute('content', desc);
+
+      // Breadcrumbs
+      const bcTitle = document.getElementById('bcTitle');
+      if (bcTitle) bcTitle.textContent = title;
+      const bcCat = document.getElementById('bcCat');
+      if (bcCat) {
+        const catMap = { 'NEWS': ['/news.html','News'], 'AI': ['/ai-tech.html','AI & Tech'], 'AI & TECH': ['/ai-tech.html','AI & Tech'], 'SPORTS': ['/sports.html','Sports'], 'SATIRE': ['/satire.html','Satire'] };
+        const key = (cat || '').toUpperCase();
+        const mapped = catMap[key] || ['/news.html','News'];
+        bcCat.href = mapped[0];
+        bcCat.textContent = mapped[1];
+      }
+
       const desc  = decodeURIComponent(descRaw.replace(/\+/g,' '));
 
       const vTitle = document.getElementById('vTitle');
