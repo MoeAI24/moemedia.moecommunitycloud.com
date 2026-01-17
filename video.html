@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MoeMedia Video | Watch & Context</title>
   <meta name="description" id="metaDesc" content="Watch MoeMedia videos with added context, summaries, and related links." />
-  <link rel="stylesheet" href="/assets/css/media.css" />
+    <link rel="canonical" href="https://moemedia.moecommunitycloud.com/video.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="MoeMedia Video | Watch & Context" />
+  <meta property="og:description" content="Independent commentary & analysis operated by MoeCommunityCloud." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moemedia.moecommunitycloud.com/video.html" />
+  <meta property="og:image" content="https://moemedia.moecommunitycloud.com/assets/img/moemedia-logo.svg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="MoeMedia Video | Watch & Context" />
+  <meta name="twitter:description" content="Independent commentary & analysis operated by MoeCommunityCloud." />
+  <meta name="twitter:image" content="https://moemedia.moecommunitycloud.com/assets/img/moemedia-logo.svg" />
+<link rel="stylesheet" href="/assets/css/media.css" />
   <link rel="icon" href="/assets/img/moemedia-logo.svg" type="image/svg+xml" />
 
   <!-- VideoObject schema (filled by JS below) -->
@@ -150,7 +162,8 @@
     <div class="container">
       <div class="footergrid">
         <div><p class="foothead">MoeMedia</p><p class="footmeta">Video page built for retention + conversion.</p></div>
-        <div class="footlinks"><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/advertise.html">Advertise</a><a href="/ethics.html">Ethics</a><a href="/privacy.html">Privacy</a></div>
+        <div class="footlinks"><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/advertise.html">Advertise</a><a href="/ethics.html">Ethics</a><a href="/privacy.html">Privacy</a>
+          <a href="/faq.html">FAQ</a></div>
         <div class="footlinks"><a href="https://moecommunitycloud.com/">↪ Back to MoeCommunityCloud.com</a><a href="/join.html">Join</a><a href="/shop.html">Shop</a></div>
       </div>
     </div>
@@ -302,6 +315,25 @@
       } else if (schemaEl) {
         schemaEl.textContent = "{}";
       }
+    })();
+  </script>
+
+  <script id="dynamicCanonical">
+    // Keep canonical aligned with the exact video URL (query params) to avoid collapsing different videos
+    (function(){
+      try{
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if(!canonical){
+          canonical = document.createElement('link');
+          canonical.setAttribute('rel','canonical');
+          document.head.appendChild(canonical);
+        }
+        canonical.setAttribute('href', window.location.href);
+
+        // Update OG/Twitter URL to match canonical
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if(ogUrl) ogUrl.setAttribute('content', window.location.href);
+      }catch(e){}
     })();
   </script>
 </body>
