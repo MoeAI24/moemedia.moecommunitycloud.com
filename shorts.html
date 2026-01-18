@@ -68,30 +68,52 @@
     <div class="container">
       <section class="pagehead"><h1>Shorts</h1><p>Vertical drops with fast CTAs — built to convert first-party traffic, not rent it.</p></section>
 
-      <section class="shortswrap">
-        <article class="shortcard">
-          <a href="/video.html?v=dQw4w9WgXcQ&t=Short+1&c=SHORTS" data-open-modal data-video="dQw4w9WgXcQ" data-title="Short 1">
-            <div class="shortcard__media"></div>
-          </a>
-          <div class="shortcard__actions">
-            <button class="btn" id="btnSaveHero">⭐ Save</button>
-            <a class="btn" href="/shop.html">🛒 Shop</a>
-            <a class="btn btn--red" href="/join.html">🔴 Join</a>
-          </div>
-        </article>
+      <section class="editorial-intro" aria-label="Shorts info">
+        <h2>Auto-updating Shorts Hub</h2>
+        <p>
+          This page supports two ways to show Shorts:
+          (1) three featured embeds you control, and (2) an auto-updating YouTube playlist embed.
+          Replace the placeholders below with your real YouTube IDs.
+        </p>
+      </section>
 
-        <div class="adblock"><strong>AdSense Slot Placeholder</strong><br/>Responsive unit between short cards (not inside).</div>
+      <section class="shorts-home" aria-label="Featured Shorts">
+        <div class="sectionbar">
+          <h2>Featured Shorts</h2>
+          <div class="filters"><a class="btn btn--red" href="/join.html">🔴 Join</a></div>
+        </div>
 
-        <article class="shortcard">
-          <a href="/video.html?v=dQw4w9WgXcQ&t=Short+2&c=SHORTS" data-open-modal data-video="dQw4w9WgXcQ" data-title="Short 2">
-            <div class="shortcard__media"></div>
-          </a>
-          <div class="shortcard__actions">
-            <button class="btn" id="btnSaveHero">⭐ Save</button>
-            <a class="btn" href="/shop.html">🛒 Shop</a>
-            <a class="btn btn--red" href="/join.html">🔴 Join</a>
-          </div>
-        </article>
+        <div class="shorts-grid">
+          <iframe class="short-embed" src="https://www.youtube.com/embed/VIDEO_ID_1" title="MoeMedia Short 1" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe class="short-embed" src="https://www.youtube.com/embed/VIDEO_ID_2" title="MoeMedia Short 2" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe class="short-embed" src="https://www.youtube.com/embed/VIDEO_ID_3" title="MoeMedia Short 3" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <p class="muted" style="margin-top:12px;">
+          Tip: Shorts are regular YouTube videos. Use the video ID from the Short URL.
+        </p>
+      </section>
+
+      <div class="adblock" style="margin:22px 0;">
+        <strong>Auto Ads</strong><br/>Keep Auto Ads enabled. Do not place ads inside video embeds.
+      </div>
+
+      <section class="editorial-block" aria-label="Auto-updating playlist">
+        <h2>All Shorts (Auto Update)</h2>
+        <p>
+          Paste your channel uploads playlist ID below to auto-update this page when you upload new Shorts.
+          The uploads playlist often starts with <strong>UU</strong>. Replace <code>YOUR_UPLOADS_PLAYLIST_ID</code>.
+        </p>
+
+        <iframe class="playlist-embed"
+          src="https://www.youtube.com/embed/videoseries?list=YOUR_UPLOADS_PLAYLIST_ID"
+          title="MoeMedia Uploads Playlist"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </section>
     </div>
   </main>
