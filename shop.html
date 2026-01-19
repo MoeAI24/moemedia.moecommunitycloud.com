@@ -77,21 +77,26 @@
     <div class="container">
       <section class="pagehead"><h1>Shop</h1><p>Official Moe Bucks merch — hoodies, tees, and more. Secure checkout powered by Spreadshop.</p></section>
 
-      <section class="shop-embed">
-        <div class="shop-head">
-          <div>
-            <h2 style="margin:0 0 6px; font-size:22px; font-weight:900;">Moe Bucks Official Store</h2>
-            <p class="shop-sub" style="margin:0;">Browse the latest drops, classic essentials, and limited releases.</p>
-          </div>
-          <div class="shop-actions">
-            <a class="btn btn--red" href="https://moe-bucks.myspreadshop.com/" target="_blank" rel="noopener">🛒 Open Full Shop</a>
-          </div>
-        </div>
+      <div class="grid" id="videoGrid">
+<div class="shop-embed">
+  <div class="shop-head">
+    <div>
+      <h2>Shop Moe Bucks Merch</h2>
+      <p class="shop-sub">Official Moe Bucks merch — hoodies, tees, and more. Secure checkout powered by Spreadshop.</p>
+    </div>
+    <div class="shop-actions">
+      <a class="btn btn--red" href="https://moe-bucks.myspreadshop.com/" target="_blank" rel="noopener">🛒 Open Full Shop</a>
+    </div>
+  </div>
 
-        <div id="mbccShop">Loading the shop…</div>
+  <div id="mbccShop" aria-label="Moe Bucks Spreadshop Store">Loading the shop…</div>
 
-        <p class="shop-fallback">If the embedded shop doesn’t load on your device, use <a href="https://moe-bucks.myspreadshop.com/" target="_blank" rel="noopener">Open Full Shop</a>.</p>
-      </section>
+  <p class="shop-fallback">
+    If the embedded shop doesn’t load on your device, use
+    <a href="https://moe-bucks.myspreadshop.com/" target="_blank" rel="noopener">Open Full Shop</a>.
+  </p>
+</div>
+</div>
     </div>
   </main>
 
@@ -108,14 +113,14 @@
 
   <script src="/assets/js/media.js"></script>
 
-  <script>
-    var spread_shop_config = {
-      shopName: "moe-bucks",
-      prefix: "https://moe-bucks.myspreadshop.com",
-      baseId: "mbccShop",
-      updateMetadata: false
-    };
-  </script>
-  <script src="https://moe-bucks.myspreadshop.com/js/shopclient.nocache.js"></script>
-</body>
+<script>
+  var spread_shop_config = {
+    shopName: "moe-bucks",
+    prefix: "https://moe-bucks.myspreadshop.com",
+    baseId: "mbccShop",
+    updateMetadata: false
+  };
+</script>
+<script src="https://moe-bucks.myspreadshop.com/js/shopclient.nocache.js"></script>
+
 </html>
