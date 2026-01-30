@@ -24,6 +24,12 @@
 
 <script id="siteSchema" type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "MoeMedia", "url": "https://moemedia.moecommunitycloud.com/", "publisher": {"@type": "Organization", "name": "MoeMedia", "url": "https://moemedia.moecommunitycloud.com/"}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8387411349417007" crossorigin="anonymous"></script>
+
+<style>
+  /* Ensures the embedded Spreadshop has enough space to render */
+  #mbccShop{min-height:900px;width:100%;}
+</style>
+
 </head>
 <body>
   <header class="header">
@@ -91,6 +97,14 @@
 
   <div id="mbccShop" aria-label="Moe Bucks Spreadshop Store">Loading the shop…</div>
 
+  <noscript>
+    <p class="shop-fallback">
+      JavaScript is required to view the embedded shop.
+      <a href="https://moe-bucks.myspreadshop.com/" target="_blank" rel="noopener">Open Full Shop</a>.
+    </p>
+  </noscript>
+
+
   <p class="shop-fallback">
     If the embedded shop doesn’t load on your device, use
     <a href="https://moe-bucks.myspreadshop.com/" target="_blank" rel="noopener">Open Full Shop</a>.
@@ -122,5 +136,6 @@
   };
 </script>
 <script src="https://moe-bucks.myspreadshop.com/js/shopclient.nocache.js"></script>
-
+
+</body>
 </html>
