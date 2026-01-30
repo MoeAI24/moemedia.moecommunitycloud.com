@@ -26,23 +26,193 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8387411349417007" crossorigin="anonymous"></script>
 
 <style>
-/* MEMBERS PAGE FIXES */
+/* === MEMBERS VISUAL UPGRADE (Phase 1) === */
+.members-hero{position:relative;}
+.members-hero::after{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.70));
+  border-radius:16px;
+}
 .members-hero img{
   width:100%;
   max-height:260px;
   object-fit:cover;
   border-radius:16px;
+  display:block;
+  transform:translateZ(0);
 }
-@media(max-width:640px){
-  .members-hero img{max-height:180px;}
+@media(max-width:640px){ .members-hero img{max-height:180px;} }
+
+/* animated glow accent */
+@keyframes glowPulse{
+  0%{box-shadow:0 0 0 rgba(225,6,0,0)}
+  50%{box-shadow:0 0 22px rgba(225,6,0,.28)}
+  100%{box-shadow:0 0 0 rgba(225,6,0,0)}
 }
-.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
-.benefit{background:#141414;border-radius:14px;padding:16px}
-.benefit h3{margin:0 0 6px 0;font-size:1.05rem}
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:12px}
-.tool-card{background:#101010;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px}
-.locked{opacity:.6}
-.schedule{background:#0f0f0f;border-radius:14px;padding:16px;margin-top:18px}
+@keyframes floaty{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(0)}
+}
+@keyframes shimmer{
+  0%{background-position:-200% 0}
+  100%{background-position:200% 0}
+}
+
+.members-wrap{
+  position:relative;
+  isolation:isolate;
+}
+.members-wrap::before{
+  content:"";
+  position:absolute; inset:-200px -120px auto -120px;
+  height:520px;
+  background:radial-gradient(closest-side, rgba(225,6,0,.22), rgba(0,0,0,0));
+  filter:blur(0px);
+  z-index:-1;
+}
+
+.members-hero-title{
+  position:absolute;
+  left:22px; right:22px; bottom:16px;
+  display:flex; flex-wrap:wrap; gap:10px;
+  align-items:flex-end; justify-content:space-between;
+  z-index:2;
+}
+.members-hero-title h1{
+  margin:0; font-size:2.0rem; letter-spacing:.02em;
+  text-shadow:0 8px 30px rgba(0,0,0,.65);
+}
+.members-hero-title p{margin:6px 0 0 0; opacity:.9; max-width:680px}
+.members-badges{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+.badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 10px; border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  font-size:12px; font-weight:700;
+  backdrop-filter: blur(8px);
+}
+.badge .dot{width:8px;height:8px;border-radius:999px;background:#e10600; box-shadow:0 0 14px rgba(225,6,0,.55)}
+.badge.free{animation:glowPulse 2.2s ease-in-out infinite}
+.badge.soon .dot{background:#ffb000; box-shadow:0 0 14px rgba(255,176,0,.35)}
+
+/* Stat strip */
+.statstrip{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px; margin-top:14px;
+}
+@media(max-width:820px){ .statstrip{grid-template-columns:1fr;}}
+.stat{
+  border-radius:16px; padding:14px 14px;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.10);
+  position:relative; overflow:hidden;
+}
+.stat::after{
+  content:"";
+  position:absolute; inset:-2px;
+  background:linear-gradient(90deg, rgba(225,6,0,0), rgba(225,6,0,.22), rgba(225,6,0,0));
+  background-size:200% 100%;
+  opacity:.55;
+  animation: shimmer 5.5s linear infinite;
+  pointer-events:none;
+}
+.stat .k{font-size:12px; letter-spacing:.08em; text-transform:uppercase; opacity:.85; margin:0}
+.stat .v{font-size:22px; font-weight:900; margin:6px 0 0 0}
+.stat .s{margin:6px 0 0 0; opacity:.85; font-size:13px}
+
+/* Benefits */
+.sectionbar h2{display:flex; align-items:center; gap:10px}
+.iconpill{
+  width:34px; height:34px; border-radius:12px;
+  display:grid; place-items:center;
+  background:rgba(225,6,0,.12);
+  border:1px solid rgba(225,6,0,.25);
+}
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:14px;
+  margin-top:14px;
+}
+.benefit{
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  padding:16px;
+  transform:translateZ(0);
+  transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  position:relative;
+  overflow:hidden;
+}
+.benefit:hover{
+  transform:translateY(-4px);
+  border-color:rgba(225,6,0,.35);
+  box-shadow:0 14px 40px rgba(0,0,0,.35);
+}
+.benefit .btop{display:flex; align-items:center; gap:10px}
+.benefit h3{margin:0; font-size:1.05rem}
+.benefit p{margin:8px 0 0 0; opacity:.9; line-height:1.45}
+
+/* Tools */
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:14px;
+  margin-top:12px;
+}
+.tool-card{
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  padding:16px;
+  position:relative;
+  overflow:hidden;
+  transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.tool-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(225,6,0,.35);
+  box-shadow:0 14px 40px rgba(0,0,0,.35);
+}
+.tool-card .tooltag{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:12px; font-weight:800; letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:7px 10px; border-radius:999px;
+  background:rgba(225,6,0,.12);
+  border:1px solid rgba(225,6,0,.25);
+}
+.tool-card.locked{opacity:.65}
+.tool-card.locked::after{
+  content:"LOCKED";
+  position:absolute; top:14px; right:14px;
+  font-weight:900; font-size:11px; letter-spacing:.14em;
+  padding:7px 10px; border-radius:999px;
+  background:rgba(255,176,0,.16);
+  border:1px solid rgba(255,176,0,.30);
+}
+.tool-card h3{margin:10px 0 0 0}
+.tool-card p{margin:8px 0 0 0; opacity:.9; line-height:1.45}
+.tool-card .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+
+/* Drop rhythm */
+.schedule{
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  padding:16px;
+  margin-top:18px;
+  animation: glowPulse 3.2s ease-in-out infinite;
+}
+.schedule h2{margin:0 0 10px 0}
+
+/* Reveal on scroll */
+.reveal{opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease}
+.reveal.in{opacity:1; transform:translateY(0)}
 </style>
 
 </head>
@@ -96,46 +266,104 @@
   </section>
 <main>
     <div class="container">
-      <section class="pagehead"><h1>Members</h1><p>Bonus drops, extended breakdowns, early access. Support independent media + keep MBCC building.</p></section>
-
-<section>
-  <div class="sectionbar"><h2>What Members Get</h2></div>
-  <div class="benefits-grid">
-    <div class="benefit"><h3>Early Access</h3><p>Watch select videos 24–48 hours before public release.</p></div>
-    <div class="benefit"><h3>Members Cuts</h3><p>Extended breakdowns with more context, fewer edits, no rush.</p></div>
-    <div class="benefit"><h3>Free Tools</h3><p>Interactive tools that help you think clearer and spot nonsense fast.</p></div>
-    <div class="benefit"><h3>Download Drops</h3><p>Templates, outlines, and formats used behind the scenes.</p></div>
-    <div class="benefit"><h3>Members Lives</h3><p>Private Q&A and watch‑party style live sessions (Phase 2).</p></div>
-    <div class="benefit"><h3>Vote on Topics</h3><p>Members help decide what gets covered next.</p></div>
-  </div>
-</section>
-
-<section>
-  <div class="sectionbar"><h2>Free Members Tools</h2></div>
-  <div class="tools-grid">
-    <div class="tool-card">
-      <h3>Headline Reality Checker</h3>
-      <p>Break down viral headlines. Spot spin, missing context, and who benefits.</p>
-      <a class="btn btn--red" href="/tools/headline-reality-checker.html">Use Tool</a>
-    </div>
-    <div class="tool-card locked"><h3>Comment Section Translator</h3><p>Translate wild comments into what they actually mean.</p></div>
-    <div class="tool-card locked"><h3>Narrative Pattern Spotter</h3><p>See recycled talking points across media cycles.</p></div>
-    <div class="tool-card locked"><h3>Creator Burnout Gauge</h3><p>Quick check to see if you’re pushing too hard.</p></div>
-    <div class="tool-card locked"><h3>Independent Thought Index</h3><p>Measure how often you think vs react.</p></div>
-  </div>
-</section>
-
-<section class="schedule">
-  <h2>Member Drop Rhythm</h2>
-  <ul>
-    <li>Weekly: Members cut or bonus breakdown</li>
-    <li>Weekly: Tool or template drop</li>
-    <li>Monthly: Members-only live Q&A</li>
-  </ul>
-</section>
+      
+      <section class="pagehead reveal">
+        <h1>Members</h1>
+        <p>Get more context, fewer edits, and real tools. Support independent media + keep MBCC building.</p>
+        <div class="statstrip">
+          <div class="stat"><p class="k">This week</p><p class="v">1 Members Cut</p><p class="s">Extended breakdown + receipts</p></div>
+          <div class="stat"><p class="k">Tools</p><p class="v">5 Member Tools</p><p class="s">Starting with Headline Reality Checker</p></div>
+          <div class="stat"><p class="k">Access</p><p class="v">24–48h Early</p><p class="s">Selected uploads first</p></div>
+        </div>
+      </section>
 
 
       <div class="notice"><strong>Phase 1:</strong> Public preview page. Gate content in Phase 2 with login + Stripe/PayPal.</div>
+
+      <section class="reveal">
+        <div class="sectionbar">
+          <h2><span class="iconpill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>What Members Get</h2>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="btop"><span class="iconpill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12l2-2 4 4L19 4l2 2-12 12-6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Early Access</h3></div>
+            <p>Watch select videos 24–48 hours before public release.</p>
+          </div>
+          <div class="benefit">
+            <div class="btop"><span class="iconpill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16v12H5.5L4 17.5V4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Members Cuts</h3></div>
+            <p>Extended breakdowns with more context, fewer edits, no rush.</p>
+          </div>
+          <div class="benefit">
+            <div class="btop"><span class="iconpill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20l9-5-9-5-9 5 9 5z M12 12l9-5-9-5-9 5 9 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Free Tools</h3></div>
+            <p>Interactive tools that help you think clearer and spot nonsense fast.</p>
+          </div>
+          <div class="benefit">
+            <div class="btop"><span class="iconpill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 7h8M8 11h8M8 15h6M6 3h12a2 2 0 0 1 2 2v14l-4-3H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Download Drops</h3></div>
+            <p>Templates, outlines, and formats used behind the scenes.</p>
+          </div>
+          <div class="benefit">
+            <div class="btop"><span class="iconpill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Members Lives</h3></div>
+            <p>Private Q&amp;A + watch-party style lives (Phase 2).</p>
+          </div>
+          <div class="benefit">
+            <div class="btop"><span class="iconpill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7l3-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Vote on Topics</h3></div>
+            <p>Members help decide what gets covered next.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal" style="margin-top:18px">
+        <div class="sectionbar">
+          <h2><span class="iconpill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19h16M4 5h16M7 9h10M7 13h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Free Members Tools</h2>
+        </div>
+
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tooltag"><span class="dot" style="width:8px;height:8px;border-radius:999px;background:#e10600;box-shadow:0 0 14px rgba(225,6,0,.55)"></span>Live now</div>
+            <h3>Headline Reality Checker</h3>
+            <p>Paste any headline. Spot spin, missing context, and who benefits — in seconds.</p>
+            <div class="actions">
+              <a class="btn btn--red" href="/tools/headline-reality-checker.html">Use Tool</a>
+              <a class="btn" href="/join.html">Unlock Phase 2</a>
+            </div>
+          </div>
+
+          <div class="tool-card locked">
+            <div class="tooltag" style="background:rgba(255,176,0,.14);border-color:rgba(255,176,0,.25)">Coming next</div>
+            <h3>Comment Section Translator</h3>
+            <p>Turn “internet yelling” into what the person actually means — and whether it’s worth replying.</p>
+          </div>
+
+          <div class="tool-card locked">
+            <div class="tooltag" style="background:rgba(255,176,0,.14);border-color:rgba(255,176,0,.25)">Coming next</div>
+            <h3>Narrative Pattern Spotter</h3>
+            <p>See recycled talking points and the emotional hooks used to spread them.</p>
+          </div>
+
+          <div class="tool-card locked">
+            <div class="tooltag" style="background:rgba(255,176,0,.14);border-color:rgba(255,176,0,.25)">Coming next</div>
+            <h3>Creator Burnout Gauge</h3>
+            <p>Quick check to see if you’re pushing too hard — and what to change this week.</p>
+          </div>
+
+          <div class="tool-card locked">
+            <div class="tooltag" style="background:rgba(255,176,0,.14);border-color:rgba(255,176,0,.25)">Coming next</div>
+            <h3>Independent Thought Index</h3>
+            <p>Measure how often you think vs react — and get a challenge to level up.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="schedule reveal">
+        <h2>Member Drop Rhythm</h2>
+        <ul>
+          <li>Weekly: 1 members cut or bonus breakdown</li>
+          <li>Weekly: 1 tool or template drop</li>
+          <li>Monthly: members-only live Q&amp;A</li>
+        </ul>
+      </section>
+
 
       <section class="layout">
         <div>
@@ -145,11 +373,21 @@
               <a href="/video.html?v=dQw4w9WgXcQ&t=Members+Cut&c=MEMBERS"><div class="thumb"><span class="duration">18:40</span></div></a>
               <div class="card__body">
                 <div class="tagrow"><span class="tag">MEMBERS</span><button class="save" title="Save">⭐</button></div>
-                <h3 class="title">Extended Breakdown (Members Cut)</h3>
-                <div class="meta"><span>MBCC</span><span>•</span><span>Bonus</span><span>•</span><span>Preview</span></div>
+                <h3 class="title">Members Cut: The Spin Behind the Headline</h3>
+                <div class="meta"><span>MBCC</span><span>•</span><span>Members Cut</span><span>•</span><span>Preview</span></div>
               </div>
             </article>
           </div>
+
+            <article class="card reveal" data-cat="members">
+              <a href="/join.html"><div class="thumb"><span class="duration">LOCKED</span></div></a>
+              <div class="card__body">
+                <div class="tagrow"><span class="tag">MEMBERS</span><button class="save" title="Save">⭐</button></div>
+                <h3 class="title">Locked Bonus Drop (Phase 2)</h3>
+                <div class="meta"><span>MBCC</span><span>•</span><span>Bonus</span><span>•</span><span>Locked</span></div>
+              </div>
+            </article>
+
         </div>
 
         <aside class="rail">
@@ -178,5 +416,26 @@
   </footer>
 
   <script src="/assets/js/media.js"></script>
+
+<script>
+  // Reveal-on-scroll (lightweight)
+  (function(){
+    const els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window) || !els.length){
+      els.forEach(e=>e.classList.add('in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold: 0.12});
+    els.forEach(e=>io.observe(e));
+  })();
+</script>
+
 </body>
 </html>
