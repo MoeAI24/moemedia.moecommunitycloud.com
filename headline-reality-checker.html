@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Headline Reality Checker | MoeMedia Members Tool</title>
+  <meta name="description" content="Break down viral headlines: spot spin, missing context, and who benefits." />
+  <link rel="canonical" href="https://moemedia.moecommunitycloud.com/tools/headline-reality-checker.html" />
+
+  <!-- Match MoeMedia site styling -->
+  <link rel="stylesheet" href="/assets/css/media.css" />
+  <link rel="icon" href="/assets/img/moemedia-logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="brand" href="/index.html">
+          <div class="brand__mark"></div>
+          <div class="brand__text">
+            <div class="brand__title">MOE MEDIA</div>
+            <div class="brand__sub">moemedia.moecommunitycloud.com</div>
+          </div>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/news.html">News</a>
+          <a href="/ai-tech.html">AI &amp; Tech</a>
+          <a href="/sports.html">Sports</a>
+          <a href="/satire.html">Satire</a>
+          <a href="/shorts.html">Shorts</a>
+          <a href="/live.html">Live</a>
+          <a href="/members.html">Members</a>
+          <a href="/shop.html">Shop</a>
+        </nav>
+        <div class="header__actions">
+          <button class="iconbtn" id="btnSearch" aria-label="Search">🔍</button>
+          <button class="iconbtn" id="btnNotify" aria-label="Notifications">🔔</button>
+          <a class="btn btn--red" href="/join.html">🔴 Join</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero-strip" role="region" aria-label="MoeMedia banner">
+    <div class="container hero-strip__inner">
+      <div class="hero-strip__left">
+        <span class="hero-strip__kicker">MEMBERS • FREE TOOL</span>
+        <span class="hero-strip__tagline">Check headlines before headlines check you.</span>
+      </div>
+      <div class="hero-strip__right">
+        <a class="btn btn--red" href="/join.html">🔴 Join</a>
+        <a class="btn" href="/members.html">⭐ Members</a>
+        <a class="btn" href="/news.html">▶ Watch Latest</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="pagehead">
+        <h1>Headline Reality Checker</h1>
+        <p>Paste a headline. We’ll strip the spin and show what’s likely missing — fast.</p>
+      </section>
+
+      <section class="card" style="margin-bottom:14px">
+        <div class="label" style="margin-bottom:8px">Quick presets</div>
+        <div id="presetRow" class="chips" aria-label="Preset headlines"></div>
+        <div style="height:10px"></div>
+        <div class="label" style="margin-bottom:8px">Or pick a category</div>
+        <div class="grid" style="grid-template-columns:1fr 220px; gap:10px">
+          <textarea id="headline" class="input" placeholder="Paste the headline here..." style="min-height:120px"></textarea>
+          <div class="card" style="margin:0">
+            <div class="label">Category</div>
+            <select id="category" class="input" style="margin-top:8px">
+              <option value="auto">Auto-detect</option>
+              <option value="news">News / Politics</option>
+              <option value="sports">Sports</option>
+              <option value="ai">AI & Tech</option>
+              <option value="culture">Culture</option>
+            </select>
+            <button class="btn btn--red" style="width:100%; margin-top:10px" id="btnAnalyze">Check Reality</button>
+            <a class="btn" style="width:100%; margin-top:10px; text-align:center" href="https://moe-bucks.myspreadshop.com/" target="_blank" rel="noopener">Support via Merch</a>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:10px">Tip: If a headline uses words like <em>shocking</em>, <em>slams</em>, <em>destroys</em>, or <em>exposed</em>, it’s probably selling a feeling.</p>
+      </section>
+
+      <section id="results" class="grid" style="display:none; gap:12px">
+        <article class="card">
+          <div class="label">What they’re implying</div>
+          <p id="imply" class="lead" style="margin-top:10px"></p>
+        </article>
+        <article class="card">
+          <div class="label">What’s missing</div>
+          <ul id="missing" class="list" style="margin-top:10px"></ul>
+        </article>
+        <article class="card">
+          <div class="label">Who benefits</div>
+          <p id="benefits" class="lead" style="margin-top:10px"></p>
+        </article>
+        <article class="card">
+          <div class="label">Reality checklist</div>
+          <ul id="checklist" class="list" style="margin-top:10px"></ul>
+        </article>
+      </section>
+
+      <section class="card" style="margin-top:14px">
+        <div class="label">Members note</div>
+        <p style="margin-top:10px">This is the Phase 1 MVP (fast + practical). Phase 2 upgrades: source linking, quote extraction, and “confidence vs clickbait” scoring.</p>
+        <p class="muted">Back to <a href="/members.html">Members</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footergrid">
+        <div><p class="foothead">MoeMedia</p><p class="footmeta">Members keep the lights on. Respect.</p></div>
+        <div class="footlinks">
+          <a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/advertise.html">Advertise</a>
+          <a href="/ethics.html">Ethics</a><a href="/privacy.html">Privacy</a><a href="/faq.html">FAQ</a>
+        </div>
+        <div class="footlinks">
+          <a href="https://moecommunitycloud.com/">↪ Back to MoeCommunityCloud.com</a><a href="/join.html">Join</a><a href="/shop.html">Shop</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/media.js"></script>
+  <script>
+    const PRESETS = [
+      { label: "“BREAKING: Officials caught lying…”", text: "BREAKING: Officials caught lying about the new policy — here’s what they don’t want you to know." },
+      { label: "“Star player DESTROYS critics…”", text: "Star player DESTROYS critics after controversial loss — fans are furious." },
+      { label: "“AI will replace your job…”", text: "New AI tool will replace millions of jobs this year, experts warn — you’re next." },
+      { label: "“Influencer EXPOSED…”", text: "Influencer EXPOSED in shocking new video — internet demands consequences." },
+      { label: "“Scientists stunned…”", text: "Scientists stunned by ‘miracle’ discovery — everything changes overnight." }
+    ];
+
+    const sensational = ["shocking","slams","destroys","exposed","caught","bombshell","insane","you won\u2019t believe","miracle","everything changes","warning","furious","outrage","humiliated","meltdown","secret","they don\u2019t want you to know","breaks the internet","goes viral","next"];
+    const sportWords = ["nba","nfl","mlb","wnba","nhl","playoffs","finals","trade","injury","suspension","coach","ref","score","points","rebounds","assist","touchdown","strikeout"];
+    const aiWords = ["ai","artificial intelligence","chatgpt","gemini","vertex","openai","model","llm","gpu","automation","deepfake"];
+
+    const el = (id)=>document.getElementById(id);
+
+    function renderPresets(){
+      const row = el("presetRow");
+      row.innerHTML = PRESETS.map((p,i)=>(
+        `<button class="chip" type="button" data-i="${i}">${p.label}</button>`
+      )).join("");
+      row.addEventListener("click",(e)=>{
+        const btn = e.target.closest("button[data-i]");
+        if(!btn) return;
+        const p = PRESETS[Number(btn.dataset.i)];
+        el("headline").value = p.text;
+        el("headline").focus();
+      });
+    }
+
+    function detectCategory(h){
+      const low = h.toLowerCase();
+      if (sportWords.some(w=>low.includes(w))) return "sports";
+      if (aiWords.some(w=>low.includes(w))) return "ai";
+      if (/(election|president|congress|senate|governor|law|policy|court|judge|trial|indict|ban|immigration)/.test(low)) return "news";
+      return "culture";
+    }
+
+    function findTriggers(h){
+      const low = h.toLowerCase();
+      const hits = sensational.filter(w=>low.includes(w));
+      // cap list
+      return [...new Set(hits)].slice(0,5);
+    }
+
+    function analyze(){
+      const h = el("headline").value.trim();
+      if(!h) return;
+
+      let cat = el("category").value;
+      if(cat === "auto") cat = detectCategory(h);
+
+      const triggers = findTriggers(h);
+      const triggerLine = triggers.length ? ` Trigger words: ${triggers.map(t=>`“${t}”`).join(", ")}.` : "";
+
+      // Implication
+      let imply = "This headline is trying to lock in a conclusion before you see the evidence.";
+      if (triggers.length) imply = "This headline is selling urgency + emotion so you react before you verify." + triggerLine;
+
+      // Missing context checklist by category
+      const missing = [];
+      missing.push("Primary source link (document, video, transcript, official statement).");
+      missing.push("Date + timeline (when it happened vs when it was posted).");
+      missing.push("The strongest counter-claim (what the other side would say).");
+
+      if(cat === "sports"){
+        missing.push("Minutes/usage, opponent context, and whether this is a single-game overreaction.");
+        missing.push("Injury report + matchups (who was out, who guarded who, pace).");
+      } else if(cat === "ai"){
+        missing.push("What’s actually new vs marketing (benchmarks, limits, failure cases).");
+        missing.push("Who funded it / who profits (vendor, VC, enterprise buyer).");
+      } else if(cat === "news"){
+        missing.push("Exact quote / policy text (not paraphrases).");
+        missing.push("What changed from prior policy (before/after).");
+      } else {
+        missing.push("Full clip/context (what happened right before and after).");
+        missing.push("Whether this is a real issue or engagement bait.");
+      }
+
+      // Who benefits
+      let benefits = "Platforms benefit from clicks and outrage. Someone gets paid when you share before you check.";
+      if(cat === "sports") benefits = "Sports media + betting/affiliate ecosystems benefit from hype swings and hot takes.";
+      if(cat === "ai") benefits = "Tool vendors + newsletters + influencers benefit from fear-of-missing-out headlines.";
+      if(cat === "news") benefits = "Political operators + partisan outlets benefit when you pick a side fast.";
+      if(cat === "culture") benefits = "Creators + drama pages benefit when the crowd becomes the jury.";
+
+      // Reality checklist
+      const checklist = [
+        "Open 2 sources that disagree.",
+        "Look for the original clip/document (not a repost).",
+        "Check the date and location.",
+        "Ask: what fact would change my mind?",
+        "Wait 10 minutes before sharing."
+      ];
+
+      el("imply").textContent = imply;
+
+      el("missing").innerHTML = missing.map(x=>`<li>${x}</li>`).join("");
+      el("benefits").textContent = benefits;
+      el("checklist").innerHTML = checklist.map(x=>`<li>${x}</li>`).join("");
+
+      el("results").style.display = "grid";
+      el("results").scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    renderPresets();
+    el("btnAnalyze").addEventListener("click", analyze);
+  </script>
+
+  <style>
+    /* Small compatibility layer if your global CSS doesn't include these */
+    .input{width:100%; padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(0,0,0,.25); color:#fff;}
+    .muted{opacity:.85}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); color:#fff; padding:8px 10px; border-radius:999px; cursor:pointer}
+    .chip:hover{transform:translateY(-1px)}
+    .list{padding-left:18px}
+    .lead{line-height:1.5}
+  </style>
+</body>
+</html>
