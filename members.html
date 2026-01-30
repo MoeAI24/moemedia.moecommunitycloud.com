@@ -24,6 +24,27 @@
 
 <script id="siteSchema" type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "MoeMedia", "url": "https://moemedia.moecommunitycloud.com/", "publisher": {"@type": "Organization", "name": "MoeMedia", "url": "https://moemedia.moecommunitycloud.com/"}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8387411349417007" crossorigin="anonymous"></script>
+
+<style>
+/* MEMBERS PAGE FIXES */
+.members-hero img{
+  width:100%;
+  max-height:260px;
+  object-fit:cover;
+  border-radius:16px;
+}
+@media(max-width:640px){
+  .members-hero img{max-height:180px;}
+}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.benefit{background:#141414;border-radius:14px;padding:16px}
+.benefit h3{margin:0 0 6px 0;font-size:1.05rem}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:12px}
+.tool-card{background:#101010;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px}
+.locked{opacity:.6}
+.schedule{background:#0f0f0f;border-radius:14px;padding:16px;margin-top:18px}
+</style>
+
 </head>
 <body>
   <header class="header">
@@ -66,7 +87,7 @@
 
   
 
-  <section class="page-hero" aria-label="MoeMedia Members - Exclusive Insights & Forums">
+  <section class="page-hero members-hero" aria-label="MoeMedia Members - Exclusive Insights & Forums">
     <div class="container">
       <div class="page-hero">
         <img src="/assets/img/members-hero.webp" alt="MoeMedia Members - Exclusive Insights & Forums" loading="eager" />
@@ -76,6 +97,43 @@
 <main>
     <div class="container">
       <section class="pagehead"><h1>Members</h1><p>Bonus drops, extended breakdowns, early access. Support independent media + keep MBCC building.</p></section>
+
+<section>
+  <div class="sectionbar"><h2>What Members Get</h2></div>
+  <div class="benefits-grid">
+    <div class="benefit"><h3>Early Access</h3><p>Watch select videos 24–48 hours before public release.</p></div>
+    <div class="benefit"><h3>Members Cuts</h3><p>Extended breakdowns with more context, fewer edits, no rush.</p></div>
+    <div class="benefit"><h3>Free Tools</h3><p>Interactive tools that help you think clearer and spot nonsense fast.</p></div>
+    <div class="benefit"><h3>Download Drops</h3><p>Templates, outlines, and formats used behind the scenes.</p></div>
+    <div class="benefit"><h3>Members Lives</h3><p>Private Q&A and watch‑party style live sessions (Phase 2).</p></div>
+    <div class="benefit"><h3>Vote on Topics</h3><p>Members help decide what gets covered next.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sectionbar"><h2>Free Members Tools</h2></div>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <h3>Headline Reality Checker</h3>
+      <p>Break down viral headlines. Spot spin, missing context, and who benefits.</p>
+      <a class="btn btn--red" href="/tools/headline-reality-checker.html">Use Tool</a>
+    </div>
+    <div class="tool-card locked"><h3>Comment Section Translator</h3><p>Translate wild comments into what they actually mean.</p></div>
+    <div class="tool-card locked"><h3>Narrative Pattern Spotter</h3><p>See recycled talking points across media cycles.</p></div>
+    <div class="tool-card locked"><h3>Creator Burnout Gauge</h3><p>Quick check to see if you’re pushing too hard.</p></div>
+    <div class="tool-card locked"><h3>Independent Thought Index</h3><p>Measure how often you think vs react.</p></div>
+  </div>
+</section>
+
+<section class="schedule">
+  <h2>Member Drop Rhythm</h2>
+  <ul>
+    <li>Weekly: Members cut or bonus breakdown</li>
+    <li>Weekly: Tool or template drop</li>
+    <li>Monthly: Members-only live Q&A</li>
+  </ul>
+</section>
+
 
       <div class="notice"><strong>Phase 1:</strong> Public preview page. Gate content in Phase 2 with login + Stripe/PayPal.</div>
 
