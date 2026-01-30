@@ -26,8 +26,12 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8387411349417007" crossorigin="anonymous"></script>
 
 <style>
-  /* Ensures the embedded Spreadshop has enough space to render */
-  #mbccShop{min-height:900px;width:100%;}
+  /* Shop embed layout + reliability */
+  .shop-embed{margin:18px 0;padding:18px;border-radius:16px;background:rgba(0,0,0,.25);}
+  .shop-head{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start;justify-content:space-between;margin-bottom:12px;}
+  #mbccShop{min-height:1100px;width:100%;border-radius:14px;overflow:hidden;}
+  .shop-fallback{margin-top:10px;opacity:.85}
+  .shop-debug{margin-top:10px;font-size:.95rem;opacity:.85}
 </style>
 
 </head>
@@ -83,8 +87,7 @@
     <div class="container">
       <section class="pagehead"><h1>Shop</h1><p>Official Moe Bucks merch — hoodies, tees, and more. Secure checkout powered by Spreadshop.</p></section>
 
-      <div class="grid" id="videoGrid">
-<div class="shop-embed">
+      <div class="shop-embed">
   <div class="shop-head">
     <div>
       <h2>Shop Moe Bucks Merch</h2>
@@ -93,7 +96,6 @@
     <div class="shop-actions">
       <a class="btn btn--red" href="https://moe-bucks.myspreadshop.com/" target="_blank" rel="noopener">🛒 Open Full Shop</a>
     </div>
-  </div>
 
   <div id="mbccShop" aria-label="Moe Bucks Spreadshop Store">Loading the shop…</div>
 
