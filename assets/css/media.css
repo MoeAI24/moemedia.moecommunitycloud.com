@@ -814,3 +814,54 @@ footer{
 .editorial-block a:hover{
   color: var(--mbcc-gold);
 }
+
+/* =========================================================
+   PATCH (2026-01-31): Home hero sizing + Latest Drops polish
+   - Caps hero image height to recover above-the-fold real estate
+   - Adds category-specific thumbnail images for "Latest Drops"
+   ========================================================= */
+
+/* ===== FIX: HOME HERO SIZE ===== */
+.home-hero__img{
+  max-height: 360px;      /* desktop cap */
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1199px){
+  .home-hero__img{
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 767px){
+  .home-hero__img{
+    max-height: 220px;    /* mobile cap */
+  }
+}
+
+/* Slightly tighter spacing so content gets above the fold */
+.home-hero{
+  margin: 12px 0 16px;
+}
+
+/* ===== LATEST DROPS VISUAL BOOST ===== */
+.grid{
+  margin-top: 8px;
+}
+
+.card .thumb{
+  background-size: cover;
+  background-position: center;
+}
+
+/* Category thumbnails (add these files to /assets/img/) */
+.card[data-cat="news"]   .thumb{ background-image:url('/assets/img/thumb-news.webp'); }
+.card[data-cat="ai"]     .thumb{ background-image:url('/assets/img/thumb-ai.webp'); }
+.card[data-cat="sports"] .thumb{ background-image:url('/assets/img/thumb-sports.webp'); }
+.card[data-cat="satire"] .thumb{ background-image:url('/assets/img/thumb-satire.webp'); }
+
+/* Keep duration chip readable on image thumbs */
+.thumb .duration{
+  backdrop-filter: blur(6px);
+}
