@@ -13,20 +13,20 @@
     "download": "/assets/members/satire/tv-rant-transparent.png"
   },
   {
-    "title": "News Cross-Out Sticker",
+    "title": "Moe News Not Even Worth Sh*t (Sticker)",
     "type": "png",
     "tags": [
       "satire",
       "transparent",
       "sticker",
-      "news",
-      "xout"
+      "moe",
+      "news"
     ],
     "date": "2026-01-31",
-    "download": "/assets/members/satire/news-xout-transparent.png"
+    "download": "/assets/members/satire/moe-news-not-worth-sticker.png"
   },
   {
-    "title": "Satire Pack (Starter ZIP)",
+    "title": "Satire Pack: Starter Bundle",
     "type": "zip",
     "tags": [
       "satire",
@@ -37,7 +37,7 @@
     "download": "/assets/members/satire/satire-pack-starter.zip"
   },
   {
-    "title": "Thumbnail Template",
+    "title": "Thumbnail Template: Satire Frame",
     "type": "template",
     "tags": [
       "template",

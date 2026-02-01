@@ -3,91 +3,150 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MoeMedia Satire Vault | Member Downloads</title>
-  <meta name="description" content="MoeMedia Satire Vault — funny transparent images, stickers, and packs for members to download." />
+  <title>MoeMedia Satire | Meme Vault</title>
+  <meta name="description" content="MoeMedia Satire — labeled satire and a member-only vault of downloadable funny transparent images, stickers, and packs." />
   <link rel="canonical" href="https://moemedia.moecommunitycloud.com/satire.html" />
-  <meta property="og:title" content="MoeMedia Satire Vault" />
-  <meta property="og:description" content="Funny transparent images, stickers, and packs for members." />
+
+  <meta property="og:title" content="MoeMedia Satire | Meme Vault" />
+  <meta property="og:description" content="Labeled satire + member-only downloads: transparent PNGs, stickers, packs." />
   <meta property="og:type" content="website" />
 
+  <!-- Keep global brand vars; page UI is fully overridden by satire-v4.css -->
   <link rel="stylesheet" href="/assets/css/media.css" />
-  <link rel="stylesheet" href="/assets/css/satire-v3.css" />
+  <link rel="stylesheet" href="/assets/css/satire-v4.css" />
   <link rel="icon" href="/assets/img/moemedia-logo.svg" type="image/svg+xml" />
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8387411349417007" crossorigin="anonymous"></script>
 </head>
 
-<body class="satire-v3">
-  <header class="sv3-top">
-    <a class="sv3-brand" href="/index.html" aria-label="MoeMedia Home">
-      <span class="sv3-dot" aria-hidden="true"></span>
-      <span class="sv3-brandtext">
-        <strong>MOE MEDIA</strong>
-        <small>Satire Vault</small>
-      </span>
-    </a>
+<body class="sv4">
+  <!-- Minimal top nav (new layout) -->
+  <header class="sv4-top" role="banner">
+    <div class="sv4-top__inner">
+      <a class="sv4-brand" href="/index.html" aria-label="MoeMedia Home">
+        <span class="sv4-mark" aria-hidden="true"></span>
+        <span class="sv4-brandtext">
+          <strong>MOE MEDIA</strong>
+          <small>Satire</small>
+        </span>
+      </a>
 
-    <nav class="sv3-nav" aria-label="Primary">
-      <a href="/news.html">News</a>
-      <a href="/ai-tech.html">AI &amp; Tech</a>
-      <a href="/sports.html">Sports</a>
-      <a class="active" href="/satire.html">Satire</a>
-      <a href="/members.html">Members</a>
-      <a href="/shop.html">Shop</a>
-    </nav>
+      <nav class="sv4-nav" aria-label="Primary">
+        <a href="/index.html">Home</a>
+        <a href="/news.html">News</a>
+        <a href="/ai-tech.html">AI &amp; Tech</a>
+        <a href="/sports.html">Sports</a>
+        <a class="active" href="/satire.html">Satire</a>
+        <a href="/members.html">Members</a>
+        <a href="/shop.html">Shop</a>
+      </nav>
 
-    <div class="sv3-actions">
-      <button class="sv3-icon" id="sv3Help" title="How it works" aria-label="How it works">?</button>
-      <a class="btn btn--red" href="/join.html">🔴 Join</a>
+      <div class="sv4-ctaRow">
+        <a class="sv4-cta sv4-cta--ghost" href="/shop.html">🛒 Merch</a>
+        <a class="sv4-cta sv4-cta--primary" href="/join.html">🔴 Join</a>
+      </div>
     </div>
   </header>
 
-  <section class="sv3-hero" aria-label="Satire Vault hero">
-    <div class="sv3-hero__bg" aria-hidden="true"></div>
-
-    <div class="sv3-hero__inner">
-      <div class="sv3-hero__left">
-        <div class="sv3-badge">MEMBER DOWNLOADS • TRANSPARENT PNG • STICKERS • PACKS</div>
-        <h1 class="sv3-h1">Satire Vault</h1>
-        <p class="sv3-lead">
-          Funny, ready-to-use assets for your posts, thumbnails, reactions, and remixes.
-          Grab transparent images, sticker cuts, and packs — updated constantly.
+  <!-- Hero: big, fun, animated, no instructions -->
+  <section class="sv4-hero" aria-label="Satire hero">
+    <div class="sv4-noise" aria-hidden="true"></div>
+    <div class="sv4-hero__inner">
+      <div class="sv4-hero__copy">
+        <div class="sv4-chip">LABELED SATIRE • ORIGINAL VISUALS • MEMBER VAULT</div>
+        <h1 class="sv4-h1">Satire that hits.</h1>
+        <p class="sv4-lead">
+          Quick laughs. Clean labeling. Download-ready visuals for your posts and thumbnails.
         </p>
 
-        <div class="sv3-hero__cta">
-          <a class="sv3-cta sv3-cta--primary" href="#vault">Enter Vault</a>
-          <a class="sv3-cta" href="/members.html">Members Hub</a>
-          <a class="sv3-cta" href="/shop.html">Merch</a>
+        <div class="sv4-hero__buttons">
+          <a class="sv4-cta sv4-cta--primary" href="#vault">Enter Vault</a>
+          <a class="sv4-cta sv4-cta--ghost" href="#latest">Latest Satire</a>
         </div>
 
-        <div class="sv3-micro">
-          <span class="sv3-pill">Satire is labeled</span>
-          <span class="sv3-pill">No doxxing / no harassment</span>
-          <span class="sv3-pill">Credit MoeMedia when possible</span>
+        <div class="sv4-metrics" aria-label="Highlights">
+          <div class="sv4-metric"><span class="k">PNG</span><span class="v">Transparent-ready</span></div>
+          <div class="sv4-metric"><span class="k">Packs</span><span class="v">Bundles & stickers</span></div>
+          <div class="sv4-metric"><span class="k">Drops</span><span class="v">New all the time</span></div>
         </div>
       </div>
 
-      <div class="sv3-hero__right" aria-hidden="true">
-        <div class="sv3-sticker sv3-sticker--tv"></div>
-        <div class="sv3-sticker sv3-sticker--x"></div>
-        <div class="sv3-sticker sv3-sticker--coin"></div>
-        <div class="sv3-sticker sv3-sticker--tape"></div>
+      <div class="sv4-hero__art" aria-hidden="true">
+        <div class="sv4-float sv4-float--a"></div>
+        <div class="sv4-float sv4-float--b"></div>
+        <div class="sv4-float sv4-float--c"></div>
+        <div class="sv4-float sv4-float--d"></div>
+        <div class="sv4-orb sv4-orb--red"></div>
+        <div class="sv4-orb sv4-orb--gold"></div>
       </div>
     </div>
   </section>
 
-  <section class="sv3-controls" id="vault" aria-label="Vault controls">
-    <div class="sv3-controls__inner">
-      <div class="sv3-tabs" role="tablist" aria-label="Asset types">
-        <button class="sv3-tab active" data-tab="all" role="tab" aria-selected="true">All</button>
-        <button class="sv3-tab" data-tab="transparent" role="tab" aria-selected="false">Transparent PNG</button>
-        <button class="sv3-tab" data-tab="stickers" role="tab" aria-selected="false">Stickers</button>
-        <button class="sv3-tab" data-tab="packs" role="tab" aria-selected="false">Packs (ZIP)</button>
-        <button class="sv3-tab" data-tab="templates" role="tab" aria-selected="false">Templates</button>
+  <!-- Latest satire (teaser cards; no placeholders to videos) -->
+  <section class="sv4-section" id="latest" aria-label="Latest satire">
+    <div class="sv4-section__bar">
+      <h2>Latest Satire</h2>
+      <div class="sv4-actions">
+        <a class="sv4-pill" href="/shorts.html">Shorts</a>
+        <a class="sv4-pill" href="/index.html#latest">Watch latest</a>
+      </div>
+    </div>
+
+    <div class="sv4-latest">
+      <a class="sv4-story" href="/satire.html#vault">
+        <div class="sv4-story__thumb">
+          <span class="sv4-story__tag">SATIRE</span>
+        </div>
+        <div class="sv4-story__body">
+          <h3>Drop of the Week: “News Not Even Worth Sh*t”</h3>
+          <p>New visuals, new energy — updated in the vault.</p>
+        </div>
+      </a>
+
+      <a class="sv4-story" href="/satire.html#vault">
+        <div class="sv4-story__thumb sv4-story__thumb--alt">
+          <span class="sv4-story__tag">COMMENTARY</span>
+        </div>
+        <div class="sv4-story__body">
+          <h3>Reaction Pack: TV Anchor Meltdown</h3>
+          <p>Transparent characters + sticker cuts.</p>
+        </div>
+      </a>
+
+      <a class="sv4-story" href="/satire.html#vault">
+        <div class="sv4-story__thumb sv4-story__thumb--gold">
+          <span class="sv4-story__tag">PACK</span>
+        </div>
+        <div class="sv4-story__body">
+          <h3>Starter Bundle</h3>
+          <p>Download-ready assets for creators.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Vault: premium, grid, search, animation. No public-facing how-to. -->
+  <section class="sv4-section sv4-section--vault" id="vault" aria-label="Member vault">
+    <div class="sv4-section__bar">
+      <h2>Meme Vault</h2>
+      <div class="sv4-actions">
+        <a class="sv4-pill sv4-pill--red" href="/join.html">Join to download</a>
+        <a class="sv4-pill" href="/members.html">Members hub</a>
+      </div>
+    </div>
+
+    <div class="sv4-toolbar" aria-label="Vault filters">
+      <div class="sv4-tabs" role="tablist" aria-label="Vault categories">
+        <button class="sv4-tab active" data-tab="all" role="tab" aria-selected="true">All</button>
+        <button class="sv4-tab" data-tab="transparent" role="tab" aria-selected="false">Transparent</button>
+        <button class="sv4-tab" data-tab="stickers" role="tab" aria-selected="false">Stickers</button>
+        <button class="sv4-tab" data-tab="packs" role="tab" aria-selected="false">Packs</button>
+        <button class="sv4-tab" data-tab="templates" role="tab" aria-selected="false">Templates</button>
       </div>
 
-      <div class="sv3-searchwrap">
-        <input id="sv3Search" class="sv3-search" type="search" placeholder="Search assets (tv, tape, meme, politics, sports, etc.)" autocomplete="off" />
-        <select id="sv3Sort" class="sv3-sort" aria-label="Sort">
+      <div class="sv4-searchwrap">
+        <input id="sv4Search" class="sv4-search" type="search" placeholder="Search the vault…" autocomplete="off" />
+        <select id="sv4Sort" class="sv4-sort" aria-label="Sort">
           <option value="new">Newest</option>
           <option value="az">A → Z</option>
           <option value="type">Type</option>
@@ -95,49 +154,35 @@
       </div>
     </div>
 
-    <div class="sv3-info">
-      <div class="sv3-info__card">
-        <h2>How to add new images (fast)</h2>
-        <ol>
-          <li>Upload your images to <code>/assets/members/satire/</code></li>
-          <li>Edit <code>/assets/data/satire-assets.json</code> (title, tags, file path)</li>
-          <li>Refresh — the vault updates automatically</li>
-        </ol>
-        <div class="sv3-info__row">
-          <a class="sv3-mini" href="/assets/data/satire-assets.json">Open assets feed</a>
-          <a class="sv3-mini" href="/members.html">Members page</a>
+    <!-- Soft gate message (no instructions) -->
+    <div class="sv4-gate" aria-label="Member access">
+      <div class="sv4-gate__card">
+        <h3>Downloads are member-only.</h3>
+        <p>Join to unlock direct downloads, packs, and new drops.</p>
+        <div class="sv4-gate__row">
+          <a class="sv4-cta sv4-cta--primary" href="/join.html">Join</a>
+          <a class="sv4-cta sv4-cta--ghost" href="/members.html">Members</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="sv4Grid" class="sv4-grid" aria-live="polite">
+      <!-- Rendered by satire-v4.js -->
+      <div class="sv4-skeleton"></div><div class="sv4-skeleton"></div><div class="sv4-skeleton"></div><div class="sv4-skeleton"></div>
+      <div class="sv4-skeleton"></div><div class="sv4-skeleton"></div><div class="sv4-skeleton"></div><div class="sv4-skeleton"></div>
+    </div>
+
+    <div class="sv4-bottom">
+      <div class="sv4-bottom__left">
+        <h3>Want the full drops?</h3>
+        <p>Members get new transparent images and packs first.</p>
+        <div class="sv4-bottom__row">
+          <a class="sv4-cta sv4-cta--primary" href="/join.html">Join</a>
+          <a class="sv4-cta sv4-cta--ghost" href="/shop.html">Merch</a>
         </div>
       </div>
 
-      <div class="sv3-info__card sv3-info__card--warn">
-        <h2>Simple usage rules</h2>
-        <ul>
-          <li>Personal use + sharing is fine.</li>
-          <li>Don’t resell raw files “as-is”.</li>
-          <li>Don’t post private info / harassment.</li>
-          <li>Credit MoeMedia when you can.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <main class="sv3-main" aria-label="Satire Vault assets">
-    <div id="sv3Grid" class="sv3-grid" aria-live="polite">
-      <div class="sv3-skeleton"></div><div class="sv3-skeleton"></div><div class="sv3-skeleton"></div><div class="sv3-skeleton"></div>
-      <div class="sv3-skeleton"></div><div class="sv3-skeleton"></div><div class="sv3-skeleton"></div><div class="sv3-skeleton"></div>
-    </div>
-
-    <div class="sv3-endcap">
-      <div class="sv3-endcap__card">
-        <h2>Want more packs?</h2>
-        <p>Members get drops first: transparent PNGs, sticker cuts, and bundles.</p>
-        <div class="sv3-endcap__row">
-          <a class="sv3-cta sv3-cta--primary" href="/join.html">Join</a>
-          <a class="sv3-cta" href="/shop.html">Shop</a>
-        </div>
-      </div>
-
-      <div class="sv3-ad">
+      <div class="sv4-ad">
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-8387411349417007"
@@ -147,50 +192,34 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
     </div>
-  </main>
+  </section>
 
-  <div class="sv3-modal" id="sv3Modal" aria-hidden="true" role="dialog" aria-label="Asset preview">
-    <div class="sv3-modal__panel" role="document">
-      <button class="sv3-close" id="sv3Close" aria-label="Close">✕</button>
-      <div class="sv3-modal__media">
-        <div class="sv3-checker" aria-hidden="true"></div>
-        <img id="sv3ModalImg" alt="" />
+  <!-- Preview modal (public can preview; downloads point to members) -->
+  <div class="sv4-modal" id="sv4Modal" aria-hidden="true" role="dialog" aria-label="Asset preview">
+    <div class="sv4-modal__panel" role="document">
+      <button class="sv4-close" id="sv4Close" aria-label="Close">✕</button>
+      <div class="sv4-modal__media">
+        <div class="sv4-checker" aria-hidden="true"></div>
+        <img id="sv4ModalImg" alt="" />
       </div>
-      <div class="sv3-modal__body">
-        <h3 id="sv3ModalTitle">Asset</h3>
-        <p id="sv3ModalTags" class="sv3-tags"></p>
-        <div class="sv3-modal__row">
-          <a id="sv3Download" class="sv3-cta sv3-cta--primary" download>Download</a>
-          <button id="sv3CopyLink" class="sv3-cta" type="button">Copy link</button>
+      <div class="sv4-modal__body">
+        <h3 id="sv4ModalTitle">Asset</h3>
+        <p id="sv4ModalTags" class="sv4-tags"></p>
+        <div class="sv4-modal__row">
+          <a id="sv4Download" class="sv4-cta sv4-cta--primary" href="/join.html">Join to Download</a>
+          <a class="sv4-cta sv4-cta--ghost" href="/members.html">Members</a>
         </div>
-        <div class="sv3-footnote">If preview doesn’t load, the download link will still work.</div>
       </div>
     </div>
   </div>
 
-  <div class="sv3-modal" id="sv3HelpModal" aria-hidden="true" role="dialog" aria-label="How it works">
-    <div class="sv3-modal__panel sv3-modal__panel--help" role="document">
-      <button class="sv3-close" id="sv3HelpClose" aria-label="Close">✕</button>
-      <h3>How this vault works</h3>
-      <p>
-        This page reads: <code>/assets/data/satire-assets.json</code>.
-        Each entry points to a downloadable file under <code>/assets/members/satire/</code>.
-      </p>
-      <p>Drop files + update one JSON → vault stays fresh.</p>
-      <div class="sv3-modal__row">
-        <a class="sv3-cta sv3-cta--primary" href="/assets/data/satire-assets.json">Open feed</a>
-        <a class="sv3-cta" href="/members.html">Members hub</a>
-      </div>
-    </div>
-  </div>
-
-  <footer class="sv3-footer" role="contentinfo">
-    <div class="sv3-footer__inner">
+  <footer class="sv4-footer" role="contentinfo">
+    <div class="sv4-footer__inner">
       <div>
         <strong>MoeMedia</strong>
-        <div class="sv3-muted">Satire Vault • Member downloads • First-party assets</div>
+        <div class="sv4-muted">Satire is labeled. Downloads are member-only.</div>
       </div>
-      <div class="sv3-footlinks">
+      <div class="sv4-footlinks">
         <a href="/privacy.html">Privacy</a>
         <a href="/faq.html">FAQ</a>
         <a href="https://moecommunitycloud.com/">MoeCommunityCloud</a>
@@ -198,6 +227,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/satire-v3.js"></script>
+  <script src="/assets/js/satire-v4.js"></script>
 </body>
 </html>
