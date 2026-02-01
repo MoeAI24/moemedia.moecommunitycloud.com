@@ -1,18 +1,20 @@
-MoeMedia Satire Member Assets
+SATIRE VAULT (v3)
 
-Drop your files in this folder:
-- Transparent PNGs (preferred for stickers/overlays)
-- WEBP previews (optional, makes the gallery look great)
-- ZIP packs (optional)
+1) Upload files here:
+   /assets/members/satire/
 
-Then update:
-  /assets/data/satire-assets.json
+2) Update this feed:
+   /assets/data/satire-assets.json
 
-Example entry:
+Preview behavior:
+- If you do NOT provide "preview", the vault will preview from "download" automatically.
+So images WILL SHOW as soon as the download file exists.
+
+Example:
 {
-  "title": "My Funny Transparent",
+  "title": "Moe News Not Even Worth Sh*t (Transparent)",
   "type": "png",
-  "tags": ["satire","transparent","sticker"],
-  "preview": "/assets/members/satire/my-preview.webp",
-  "download": "/assets/members/satire/my-transparent.png"
+  "tags": ["satire","transparent","sticker","moe"],
+  "date": "2026-01-31",
+  "download": "/assets/members/satire/moe-news-not-worth-transparent.png"
 }

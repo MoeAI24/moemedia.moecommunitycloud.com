@@ -1,24 +1,50 @@
 [
   {
-    "title": "TV Mic Rant Character (Transparent)",
+    "title": "TV Rant Character (Transparent)",
     "type": "png",
     "tags": [
       "satire",
+      "transparent",
       "character",
-      "transparent"
+      "tv",
+      "mic"
     ],
-    "preview": "/assets/members/satire/tv-mic-rant-preview.webp",
-    "download": "/assets/members/satire/tv-mic-rant-transparent.png"
+    "date": "2026-01-31",
+    "download": "/assets/members/satire/tv-rant-transparent.png"
   },
   {
-    "title": "News Cross-Out (Sticker)",
+    "title": "News Cross-Out Sticker",
     "type": "png",
     "tags": [
       "satire",
+      "transparent",
       "sticker",
-      "transparent"
+      "news",
+      "xout"
     ],
-    "preview": "/assets/members/satire/news-xout-preview.webp",
+    "date": "2026-01-31",
     "download": "/assets/members/satire/news-xout-transparent.png"
+  },
+  {
+    "title": "Satire Pack (Starter ZIP)",
+    "type": "zip",
+    "tags": [
+      "satire",
+      "pack",
+      "zip"
+    ],
+    "date": "2026-01-31",
+    "download": "/assets/members/satire/satire-pack-starter.zip"
+  },
+  {
+    "title": "Thumbnail Template",
+    "type": "template",
+    "tags": [
+      "template",
+      "thumbnail",
+      "satire"
+    ],
+    "date": "2026-01-31",
+    "download": "/assets/members/satire/thumbnail-template.png"
   }
 ]
