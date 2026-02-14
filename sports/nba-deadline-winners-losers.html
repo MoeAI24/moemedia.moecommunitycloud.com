@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NBA Trade Deadline: Winners, Losers, and the Incentives Behind the Moves | MoeMedia Sports</title>
+  <meta name="description" content="MoeMedia analysis and context: NBA Trade Deadline: Winners, Losers, and the Incentives Behind the Moves" />
+  <meta property="og:title" content="NBA Trade Deadline: Winners, Losers, and the Incentives Behind the Moves | MoeMedia Sports" />
+  <meta property="og:description" content="Context over noise — MoeMedia Sports coverage and analysis." />
+  <style>
+    :root{
+      --bg:#0b0b0b; --panel:#121212; --text:#f7f3e9; --muted:rgba(247,243,233,.72);
+      --red:#c1121f; --gold:#d4af37; --gold2:#a8831e; --stroke:rgba(212,175,55,.25);
+      --r:16px; --shadow: 0 14px 34px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--text);
+      background:
+        radial-gradient(900px 450px at 10% 0%, rgba(193,18,31,.25), transparent 60%),
+        radial-gradient(700px 380px at 85% 10%, rgba(212,175,55,.16), transparent 55%),
+        linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,.92)),
+        var(--bg);
+    }
+    body:before{
+      content:""; position:fixed; inset:0; pointer-events:none; opacity:.10;
+      background:
+        repeating-linear-gradient(45deg, rgba(255,255,255,.08) 0 2px, transparent 2px 18px),
+        repeating-linear-gradient(-45deg, rgba(193,18,31,.10) 0 2px, transparent 2px 18px);
+      mix-blend-mode:overlay;
+    }
+    a{color:var(--text); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px; margin:0 auto; padding:24px 16px 70px; position:relative}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      padding:14px 14px; border-radius:var(--r);
+      background:linear-gradient(180deg, rgba(18,18,18,.85), rgba(12,12,12,.75));
+      border:1px solid rgba(212,175,55,.22); box-shadow:var(--shadow); backdrop-filter:blur(8px);
+    }
+    .brand{display:flex; flex-direction:column; gap:2px; line-height:1.05}
+    .brand .kicker{font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:rgba(247,243,233,.55)}
+    .brand .name{font-size:16px; font-weight:900}
+    .nav{display:flex; gap:10px; flex-wrap:wrap}
+    .chip{font-size:13px; padding:8px 10px; border-radius:999px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)}
+    .chip.gold{border-color:rgba(212,175,55,.35); background:linear-gradient(180deg, rgba(212,175,55,.12), rgba(212,175,55,.06))}
+    header.article{
+      margin:18px 0 14px; padding:18px 16px; border-radius:var(--r);
+      border:1px solid rgba(193,18,31,.28);
+      background: radial-gradient(900px 260px at 10% 0%, rgba(193,18,31,.30), transparent 60%),
+                  linear-gradient(180deg, rgba(20,20,20,.70), rgba(10,10,10,.70));
+      box-shadow:var(--shadow);
+    }
+    h1{margin:0 0 10px; font-size:34px; letter-spacing:-.02em}
+    .meta{display:flex; flex-wrap:wrap; gap:10px; color:rgba(247,243,233,.65); font-size:13px}
+    .pill{display:inline-flex; gap:8px; align-items:center; padding:7px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.10); background:rgba(0,0,0,.25)}
+    .dot{width:8px;height:8px;border-radius:99px;background:var(--red); box-shadow:0 0 0 4px rgba(193,18,31,.16)}
+    .panel{
+      margin-top:14px; padding:16px; border-radius:var(--r);
+      background:linear-gradient(180deg, rgba(18,18,18,.86), rgba(10,10,10,.82));
+      border:1px solid rgba(212,175,55,.18); box-shadow:var(--shadow);
+    }
+    .panel h2{margin:0 0 10px; font-size:16px; letter-spacing:.12em; text-transform:uppercase}
+    p{line-height:1.6; color:rgba(247,243,233,.92)}
+    ul{margin:10px 0 0 20px; color:rgba(247,243,233,.90); line-height:1.6}
+    .video{
+      margin-top:14px; border-radius:var(--r); overflow:hidden; border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.35)
+    }
+    .video .placeholder{
+      padding:14px; font-size:13px; color:rgba(247,243,233,.75);
+      border-bottom:1px solid rgba(255,255,255,.08)
+    }
+    iframe{width:100%; height:480px; border:0; display:block}
+    .cta{
+      margin-top:14px; padding:16px; border-radius:var(--r);
+      border:1px solid rgba(212,175,55,.30);
+      background: radial-gradient(800px 220px at 10% 0%, rgba(212,175,55,.18), transparent 58%),
+                  linear-gradient(180deg, rgba(18,18,18,.86), rgba(10,10,10,.86));
+      box-shadow:var(--shadow);
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; padding:10px 12px; border-radius:12px;
+      border:1px solid rgba(212,175,55,.40);
+      background:linear-gradient(180deg, rgba(212,175,55,.18), rgba(212,175,55,.08));
+      font-weight:800; font-size:13px;
+    }
+    .btn.alt{
+      border-color:rgba(255,255,255,.14); background:rgba(255,255,255,.04); font-weight:700;
+    }
+    footer{
+      margin-top:18px; text-align:center; font-size:12px; color:rgba(247,243,233,.55)
+    }
+    @media (max-width:800px){ h1{font-size:28px} iframe{height:360px}}
+    </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="brand">
+        <div class="kicker">MoeMedia</div>
+        <div class="name">Sports Coverage</div>
+      </div>
+      <div class="nav">
+        <a class="chip" href="/index.html">Home</a>
+        <a class="chip" href="/news.html">News</a>
+        <a class="chip gold" href="/sports.html">Sports</a>
+        <a class="chip" href="https://moecommunitycloud.com" target="_blank" rel="noopener">MoeCommunityCloud</a>
+      </div>
+    </div>
+
+    <header class="article">
+      <h1>NBA Trade Deadline: Winners, Losers, and the Incentives Behind the Moves</h1>
+      <div class="meta">
+        <span class="pill"><span class="dot"></span> NBA</span>
+        <span class="pill">Feb 5, 2026</span>
+        <span class="pill">MoeMedia Sports</span>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>What happened</h2>
+      <p>The deadline is less about ‘winning trades’ and more about aligning timelines: contention, flexibility, and future optionality.</p>
+<p>Some teams upgrade talent; others upgrade leverage — and fans only notice one of those immediately.</p>
+    </section>
+
+    <section class="panel">
+      <h2>MoeMedia angle</h2>
+      <p>This is the part that usually gets skipped: how one headline changes incentives, decisions, and outcomes.</p>
+      <ul>
+        <li>Look for ‘salary structure’ wins: flexibility is a weapon after the deadline too.</li>
+<li>Watch teams that quietly improved defense and rebounding — that travels in playoffs.</li>
+<li>The biggest losers are often teams that didn’t choose a direction (half-in, half-out).</li>
+      </ul>
+    </section>
+
+    <section class="video">
+      <div class="placeholder"><strong>Embed your YouTube Short here:</strong> Replace <code>YOUR_VIDEO_ID</code> below with your actual YouTube video ID.</div>
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </section>
+
+    <section class="panel">
+      <h2>Related coverage</h2>
+      <ul>
+        <li><a href="/sports/kings-lavine-surgery.html">Kings: LaVine Season-Ending Surgery</a></li>
+<li><a href="/sports/jaren-jackson-knee-surgery.html">Jazz: Jaren Jackson Jr. Surgery Impact</a></li>
+<li><a href="/sports.html">Back to Sports Hub</a></li>
+      </ul>
+    </section>
+
+    <section class="cta">
+      <div>
+        <div style="font-weight:900; font-size:16px;">Support independent sports coverage</div>
+        <div style="color:rgba(247,243,233,.72); font-size:13px; margin-top:4px;">
+          Join MoeMedia Membership for deeper breakdowns, daily angles, and clean commentary.
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn" href="https://moecommunitycloud.com" target="_blank" rel="noopener">Join / Visit</a>
+        <a class="btn alt" href="https://moemedia.moecommunitycloud.com" target="_blank" rel="noopener">MoeMedia Hub</a>
+      </div>
+    </section>
+
+    <footer>
+      Source: <a href="https://www.espn.com/nba/story/_/id/47831603/nba-trade-deadline-winners-losers-cavaliers-dallas-mavericks-james-harden" target="_blank" rel="noopener">ESPN</a> • Please do not repost full articles — MoeMedia summarizes + adds commentary.
+    </footer>
+
+  </div>
+</body>
+</html>
